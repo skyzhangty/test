@@ -1,0 +1,21 @@
+ol.message-snippet-list{
+  list-style: none;
+  @include box-shadow();
+  border-radius: $card-border-radius;
+  li{
+    margin-left: 0;
+    border-top: 0;
+    padding:0;    
+    @extend .fadeIn;
+    background-color: $neutral-background-color;
+
+    margin-bottom: 0;
+    border-bottom:solid 1px lighten($border-color, 10%);
+    &:last-child{
+      border-bottom: 0;
+    }
+  }
+  li:before{
+    content: none;
+  }
+}

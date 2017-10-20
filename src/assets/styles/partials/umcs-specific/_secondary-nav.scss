@@ -1,0 +1,128 @@
+/* ************* SECONDARY NAVIGATION DESIGN PATTERN *********************** */
+/* Provides a secondary navigation for pages that need it. Three options are available: 1.Vertical, 2.Horizintal and 3.Tabbed */
+/* ****************************************************************** */
+
+.special-main{
+  @include flex-display();
+
+  aside{
+    flex:1;
+  }
+  .main-content{
+    flex:6;
+    @include margin-top(-2);
+  }
+}
+
+
+/* Vertical Nav */
+.left-nav{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  @include padding(1);
+  background-color: white;
+  @include margin-top(-2);
+  @include margin-bottom(-2);
+  border-right: solid 1px $border-color;
+  @include box-shadow();
+  width: 15%;
+  h1{
+    @extend .delta;
+    @include padding-left(.5);
+    text-transform: uppercase;
+  }
+}
+
+nav.secondary-nav.vertical{
+  ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+
+    li{
+      a{
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      a.active{
+        background-color: $primary-color;
+        color: white;
+      }
+      a:hover:not(.active){
+       background-color: $secondary-color;
+       color: white;
+      }
+    }
+
+  }
+}
+
+.left-nav h1{
+  font-size:.75em !important ;
+  letter-spacing: .05em;
+}
+
+/* Icon Nav */
+nav.icon-nav li a {
+  margin: 0 0;
+
+
+
+}
+
+/* Horizontal Nav */
+nav.secondary-nav.horizontal{
+  @include flex-display();
+  line-height: 140%;
+  text-align: center;
+  position: relative;
+  .fa{
+      display: none;
+  }
+
+  a{
+    // @extend .hvr-fade;
+    -webkit-flex:1;
+    flex:1;
+    @include padding(.5);
+    @include font-size(.95);
+    @include no-hyphens();
+    background-color: $primary-color;
+    color:#fff;
+    position:relative;
+
+    &:hover{
+      background-color: darken($primary-color, 10%);
+      text-decoration: none;
+    }
+    &.active{
+      background-color: $secondary-color;
+      cursor:default;
+      .fa{
+        display: inline;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        border-width: 15px 15px 0;
+        border-style: solid;
+        border-color: $secondary-color transparent;
+        display: block;
+        width: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+  nav.secondary-nav.horizontal{
+    a{
+      @include padding(1);
+      @include font-size(1.1);
+    }
+  }
+}

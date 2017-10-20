@@ -1,0 +1,147 @@
+.canned-query{
+
+  a{
+    display: block;
+    color: #fff;
+
+    div{
+      @extend .hvr-fade;
+      height: 200px;
+      background-color: rgba($institution-primary-color, 0.65);
+      text-align: center;
+      span{
+        display: inline-block;
+        @include margin-top(4);
+        @include margin-left(.5);
+        @include margin-right(.5);
+        @include font-size(1.2);
+        line-height: 130%;
+        text-transform: uppercase;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+      }
+    }
+    &:hover{
+      div{
+        background-color: rgba($institution-primary-color, 0.85);
+        span{
+          // @include margin-top(5);
+          -webkit-transform: translate3d(0,-20px,0);
+          transform: translate3d(0,-20px,0);
+        }
+      }
+    }
+  }
+  &.healthy-men{
+    a{
+      background: url('../images/canned-queries/healthy-men.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.healthy-women{
+    a{
+      background: url('../images/canned-queries/healthy-women.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.healthy-women{
+    a{
+      background: url('../images/canned-queries/healthy-women.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.home{
+    a{
+      background: url('../images/canned-queries/home.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.depression{
+    a{
+      background: url('../images/canned-queries/depression.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.dental{
+    a{
+      background: url('../images/canned-queries/dental.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.obesity{
+    a{
+      background: url('../images/canned-queries/obesity.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.diabetes{
+    a{
+      background: url('../images/canned-queries/diabetes.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.safety{
+    a{
+      background: url('../images/canned-queries/safety.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.breast-cancer{
+    a{
+      background: url('../images/canned-queries/breast-cancer.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.prostate-cancer{
+    a{
+      background: url('../images/canned-queries/prostate-cancer.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.colon-cancer{
+    a{
+      background: url('../images/canned-queries/colon-cancer.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  &.lung-cancer{
+    a{
+      background: url('../images/canned-queries/lung-cancer.jpg');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+
+
+/*Canned Queries List*/
+.canned-queries-list{
+  @include margin-top(2);
+}

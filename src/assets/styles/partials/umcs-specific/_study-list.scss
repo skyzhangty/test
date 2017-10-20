@@ -1,0 +1,54 @@
+/* *********************** STUDY LIST ************************** */
+/* ************************************************************* */
+
+.study-list{
+	div[class*="grid"]{
+		@include padding(.25);
+	}
+	.study-list-header{
+		background-color: #3f51b5;
+		padding:.25em;
+		overflow: hidden;
+		h1{
+			float: left;
+			@include margin-bottom(0);
+			@include font-size($h4-font-size);
+			@include margin-top(.264);
+			font-weight: normal;
+			color: white;
+		}
+		.badge{
+			float: right;
+		}
+	}
+	ol,ul{
+		list-style: none;
+		padding:0.5em;
+		li{
+			margin-left: 0;
+	    border-top: 0;
+	    padding:0;
+	    @include margin-bottom(2);
+	    @extend .fadeIn;
+	    background-color: $neutral-background-color;
+		}
+		li:last-child{
+			@include margin-bottom(0);
+		}
+		li:before{
+	    content: none;
+	  }
+	}
+}
+
+// For medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+	.study-list .study-list-header h1{
+			@include font-size(1.4382);
+			@include margin-top(0.142);
+		}
+		.study-list ol,
+		.study-list ul{
+			padding:1em;
+		}
+}

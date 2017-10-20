@@ -1,0 +1,181 @@
+.logo{
+  display: block;
+  background: url(../images/logo-medium.png) no-repeat scroll 0 0 transparent;
+  height:75px;
+}
+.logo-small{
+  display: block;
+  background: url(../images/logo-small.png) no-repeat scroll 0 0 transparent;
+  height:75px;
+}
+
+.full-header{
+  .mobile-only{
+    display: none !important;
+  }
+  @include margin-bottom(2);
+  @extend .fadeInDown;
+  .global-nav{
+      text-align: right;
+      .grid-row{
+        .grid-sm-1{
+          @include padding(.25);
+        }
+      }
+      a{
+        @include margin-right(0.3);
+        @include font-size(.7);
+      }
+      a:last-child{
+        margin-right: 0;
+      }
+      nav a:last-child:after{
+        content:"";
+      }
+    }
+
+  .account-nav{
+    background-color: $institution-primary-color;
+    text-align: right;
+    .loved-one-nav,
+    .account-settings-nav,
+    .logout{
+      display: inline-block;
+      @include font-size(.85);
+      border-right:solid 1px #fff;
+      a{
+        @include padding-left(.6);
+        color:#fff;
+        display: inline-block;
+        @include padding(.35);
+      }
+      a:after {
+        content: "·";
+        display: inline-block;
+        @include padding-left(.6);
+      }
+      a:last-child:after{
+        content:"";
+      }
+      a:hover{
+      }
+    }
+    .logout{
+      border-right:0 !important;
+    }
+    .loved-one-nav{
+      .logged-in-as-info{
+        display: inline-block;
+        color:$institution-secondary-color;
+        @include font-size(.85);
+        @include padding(.35);
+        @include padding-right(.6);
+        border-right:solid 1px #fff;
+      }
+    }
+  }
+  .main-menu-nav{
+    background-color: #fff;
+    -moz-box-shadow: 0 8px 8px -8px rgba(0,0,0,0.23);
+    -webkit-box-shadow:0 8px 8px -8px rgba(0,0,0,0.23);
+    box-shadow: 0 8px 8px -8px rgba(0,0,0,0.23);
+    .grid-row > div{
+      @include padding(.75);
+    }
+      nav{
+        .nav-tile{
+          text-align: center;
+          border-right: dotted 1px $secondary-color;
+          @extend .hvr-underline-from-center;
+          a{
+            @include padding-top(.5);
+            display: block;
+            color:rgba(64, 101, 143, 0.78);
+            text-transform: uppercase;
+            @include font-size(.95);
+            line-height: 150%;
+            span.fa{
+              display: block;
+              @include font-size(1.5);
+              @include padding-bottom(.5);
+            }
+          }
+          /*Badges where present*/
+          /*Eyeballed position values to get it right*/
+          .menu-badge{
+            top:.45rem;
+            right:.75rem;
+          }
+          a:hover{
+            text-decoration: none;
+          }
+        }
+        .nav-tile.active,
+        .nav-tile.active:hover{
+            background-color: $secondary-color;
+            a{
+              color:#fff;
+            }
+        }
+        .nav-tile:last-child{
+          border-right:0;
+        }
+        .nav-tile:hover{
+          background-color:lighten($secondary-color,42%);
+          cursor: pointer;
+        }
+      }
+  }
+}
+
+// For small screens only
+@media screen and (max-width: $md-screen-breakpoint){
+  .full-header{
+    position:fixed;
+    bottom:0;
+    margin-bottom:0;
+    width: 100%;
+    z-index:3;
+    -moz-box-shadow: 0 -8px 8px -8px rgba(0,0,0,0.23);
+    -webkit-box-shadow:0 -8px 8px -8px rgba(0,0,0,0.23);
+    box-shadow: 0 -8px 8px -8px rgba(0,0,0,0.23);
+    border-top: solid 1px $border-color;
+    .desktop-only{
+      display: none !important;
+    }
+    .mobile-only{
+      display: block !important;
+    }
+    .main-menu-nav{
+      nav{
+        background-color: $accent-color;
+        .nav-tile{
+          @include padding(.25);
+          &:hover{
+            a{
+              color:rgba(64, 101, 143, 0.78);
+            }
+          }
+          //Do not show underline from center animation on small screens
+          &:before{
+            content: none;
+          }
+          a{
+            color: #fff;
+            @include font-size(.75);
+            span.fa{
+              @include font-size(.9);
+              @include padding-bottom(.10);
+            }
+          }
+          /*Badges where present*/
+          /*Eyeballed position values to get it right*/
+          .menu-badge{
+            top:.05rem;
+            right:.45rem;
+          }
+        }
+      }
+    }
+  }
+}

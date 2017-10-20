@@ -1,0 +1,75 @@
+/* *********************** LOGIN *********************** */
+/* ***************************************************** */
+.login-content{
+	@include margin-top(0);
+}
+
+.login-content header{
+	@include margin-top(0);
+	@include margin-bottom(3.3);
+}
+.login-content header h1{
+	text-align: center;
+	color: $secondary-font-color;
+	font-weight:300;
+}
+
+.login-content .feedback-block{
+	a{
+		color:darken($link-font-color,10%);
+		text-decoration: underline;
+	}
+}
+.login-content .form-stacked label{
+	@include margin-bottom(0.50);
+	color: #111;
+}
+.login-content .password input[type=password]{
+	display: inline-block;
+}
+.login-content .password .password-show{
+	display: inline-block;
+	@include font-size(0.9);
+	color:$secondary-font-color;
+	text-align: center;
+}
+.login-content .form-stacked .primary-button{
+	display: block;
+	width: 100%;
+	@include margin-top(0);
+}
+
+.login-links-container{
+	@include margin-top(2.2);
+	text-align: center;
+}
+.login-links-container a{
+	display:block;
+	text-align: center;
+}
+
+
+//**** RESPONSIVENESS **//
+
+//small screen sizes
+@media only screen and (max-width : $md-screen-breakpoint) {
+	.password .field-help-text{
+		display:inline-block;
+		float:right;
+		@include margin-top(0.25);
+	}
+}
+//medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+	.login-content header{
+		display: block !important;
+	}
+	.login-content .password .password-show:not(.always){
+		@include margin-left(1);
+		display: none;
+	}
+
+	.login-links-container a{
+		display:inline;
+	}
+}

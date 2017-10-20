@@ -1,0 +1,7 @@
+/* ************** Related Studies Design Pattern ******************** */
+/* ****************************************************************** */
+
+// Last child does not need a bottom margin 
+article.related-studies article:last-child{
+	@include margin-bottom(0);
+}

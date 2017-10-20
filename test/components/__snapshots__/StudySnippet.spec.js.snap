@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Study Snippet should render active 1`] = `
+<li>
+  <article
+    className="study-snippet-st wow active"
+  >
+    <Connect(Link)
+      bindings={
+        Object {
+          "irbNumber": "irb",
+        }
+      }
+      to="studyHome"
+    >
+      <div
+        className="banner"
+      >
+        <span
+          aria-hidden="true"
+          className="fa fa-check"
+        />
+        <span
+          className="show-for-sr"
+        >
+          This study is
+        </span>
+        active
+      </div>
+      <div
+        className="study-irb"
+        id="divIRB-irb"
+      >
+        irb
+      </div>
+      <h1
+        className="study-title"
+        id="h1Title-irb"
+      >
+        titlo
+      </h1>
+      <div
+        className="study-pi"
+        id="divPI-irb"
+      >
+        McCormick, Robert "the rock"
+      </div>
+      <section
+        className="study-notifications"
+        id="sectionNotifications-irb"
+      >
+        <div>
+          <span
+            className="number"
+          >
+            1
+          </span>
+          Messages
+        </div>
+        <div>
+          <span
+            className="number"
+          >
+            8
+          </span>
+          Recommendations
+        </div>
+      </section>
+    </Connect(Link)>
+  </article>
+</li>
+`;
+
+exports[`Study Snippet should render inactive 1`] = `
+<li>
+  <article
+    className="study-snippet-st wow inactive"
+  >
+    <Connect(Link)
+      bindings={
+        Object {
+          "irbNumber": "irb",
+        }
+      }
+      to="studyHome"
+    >
+      <div
+        className="banner"
+      >
+        <span
+          aria-hidden="true"
+          className="fa fa-times"
+        />
+        <span
+          className="show-for-sr"
+        >
+          This study is
+        </span>
+        inactive
+      </div>
+      <div
+        className="study-irb"
+        id="divIRB-irb"
+      >
+        irb
+      </div>
+      <h1
+        className="study-title"
+        id="h1Title-irb"
+      >
+        titlo
+      </h1>
+      <div
+        className="study-pi"
+        id="divPI-irb"
+      >
+        McCormick, Robert "the rock"
+      </div>
+      <section
+        className="study-notifications"
+        id="sectionNotifications-irb"
+      >
+        <div>
+          <span
+            className="number"
+          >
+            1
+          </span>
+          Messages
+        </div>
+        <div>
+          <span
+            className="number"
+          >
+            8
+          </span>
+          Recommendations
+        </div>
+      </section>
+    </Connect(Link)>
+  </article>
+</li>
+`;

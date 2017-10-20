@@ -1,0 +1,56 @@
+.signup-banner{
+  @include margin-top(2);
+  background-color: #fff;
+  border: solid 1px $border-color;
+  @include padding-top(.5);
+  @include padding-bottom(.5);
+  @extend .vertical-center-container;
+  >div{
+    text-align: center;
+    @include padding(1);
+    @extend .vertical-center;
+  }
+
+  .stats{
+    @include margin-top(.5);
+    font-weight: 500;
+    color: $institution-primary-color;
+    line-height: 100%;
+  }
+  .stats-label{
+    line-height: 135%;
+  }
+
+
+  .small-special-button{
+    @include margin-top(1);
+    @include margin-bottom(.15);
+  }
+  .why-signup{
+    @include font-size(.9);
+ 	  color:$secondary-font-color;
+    line-height: 130%;
+    @include no-hyphens();
+    a{
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+  .signup-banner{
+    >div:last-child{
+      border-left:dotted 2px $secondary-color;
+      @include padding(1);
+    }
+
+    .small-special-button{
+      @include margin-top(.5);
+    }
+    .why-signup{
+      a{
+        display: inline;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* ************** UMCS-SPECIFIC LOGIN SCREEN ************* */
+/* ******************************************************* */
+.login .logo{
+	background: url(../images/logo-small.png) no-repeat scroll 50% 0 transparent;
+	height:75px;
+}
+
+.whichPassword{
+	background-color: #fff;
+	border: solid 1px $border-color;
+	@include border-radius($border-radius);
+	padding: 1em;
+	@include margin-bottom(1.5);
+}
+
+.whichPassword .fa{
+	@include margin-right(.2);
+}

@@ -1,0 +1,169 @@
+.filter-studies{
+	background-color: #fff;
+	border:solid 1px $border-color;
+	@include flex-display();
+	border-radius: $card-border-radius;
+	.status-container{
+		width: 60%;
+		.count{
+			@include font-size($h4-font-size);
+			font-weight: 500;
+			color: $institution-primary-color;
+		}
+		.applied-filters{
+			@include font-size($form-help-text-font-size);
+			-webkit-hyphens: none;
+			-moz-hyphens: none;
+	    	hyphens: none;
+			-ms-word-break: keep-all;
+			 word-break: keep-all;
+			 line-height: 130%;
+
+			 span{
+				@extend .pulse;
+				background: $neutral-background-color;
+			  display: inline-block;
+			  margin-top: 4px;
+			  padding: 4px;
+			  border-radius: $card-border-radius;
+			  border: solid 1px $border-color;
+			 }
+		}
+	}
+	.button-container{
+		width: 40%;
+		align-self: center;
+		text-align: right;
+
+		.small-primary-button{
+			margin-bottom: 0;
+			.single-icon{
+				display: inline-block;
+			}
+			.fa-stack{
+				display: none;
+			}
+		}
+	}
+
+	/*If there are applied filters*/
+	&.filters-applied{
+		.status-container{
+			.applied-filters{
+				strong:after{
+					content: ":";
+				}
+			}
+		}
+		.button-container{
+			.small-primary-button{
+				.single-icon{
+					display: none;
+				}
+				.fa-stack{
+					display: inline-block;
+					@include font-size(.75);
+					.fa-sliders{
+						color: $primary-color;
+					}
+				}
+				&:hover{
+					.fa-stack{
+						.fa-sliders{
+							color: $secondary-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sticky-header{
+	display: none;
+	&.stickEmUp.sticky-header{
+		@extend .fadeInDown;
+		@include flex-display();
+		position:fixed;
+		top:0px;
+		z-index:  2;
+		width: 100%;
+		left:50%;
+		margin: 0 0 0 -50%;
+		@include border-radius(0);
+		border-bottom:0;
+		@include padding(.5);
+		background-color: $primary-color;
+		.count{
+			flex-grow: 2;
+			color: #fff;
+		}
+		.button-container{
+			flex-grow: 1;
+			text-align: right;
+			@include padding-right(1);
+			.small-primary-button{
+				border:solid 1px #fff !important;
+				display: inline-block !important;
+				@include margin-left(.5);
+				margin-bottom:0;
+				background-color: #fff;
+				color: $primary-color !important;
+				@include font-size(.9);
+				@include padding(.5);
+				&:hover{
+					text-decoration: underline !important;
+				}
+			}
+		}
+	}
+}
+
+/*Hide filter icon on mobile devices*/
+@media screen and (max-width: $md-screen-breakpoint){
+	.filter-studies,
+	.filter-studies.filters-applied{
+		.button-container{
+			.small-primary-button{
+				.single-icon,
+				.fa-stack{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $lg-screen-breakpoint){
+	.filter-studies{
+		.status-container{
+			width: 75%;
+		}
+		.button-container{
+			width:35%;
+		}
+	}
+}
+
+
+/************ NO STUDIES FOUND ************/
+.no-studies-found{
+	@include padding(1);
+	text-align: center;
+	background: #fff;
+	border-top: solid 4px $secondary-color;
+	@include border-radius($card-border-radius);
+	@include box-shadow();
+	.media{
+		.fa{
+			@include font-size(5);
+			color: $secondary-font-color;
+		}
+	}
+	.content{
+		@include margin-top(2);
+		h1{
+			@extend .beta;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+//Nav Card
+.nav-card{
+  text-align: center;
+  position: relative;
+  @include padding(1);
+  background-color:#fff;
+  @include box-shadow();
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+	-webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  border-left: solid 5px $secondary-color;
+  border-radius: $card-border-radius;
+  .media{
+     .fa{
+      	@include font-size(1.5);
+      	color: $secondary-color;
+      }
+      .fa.pe-7s-user{
+        @include font-size(2.5);
+      }
+  }
+  .menu-badge{
+    min-height: 48px;
+    min-width: 48px;
+    line-height:3em;
+    top:-24px;
+    right:-24px;
+  }
+  .primary-info{
+    h1{
+      display: inline-block;
+      border-bottom: solid 2px white;
+      @include font-size($h4-font-size);
+    	@include margin-bottom(0);
+    	@include margin-top(0);
+      color: $link-font-color;
+      font-weight: normal;
+      transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    	-webkit-transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    }
+	}
+  .secondary-info{
+    display: inline-block;
+    @include margin-bottom(0);
+    @include margin-top(0);
+    color: $base-font-color;
+    font-weight: normal;
+    // transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    // -webkit-transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    p{
+      @include margin-bottom(0);
+      @include margin-top(0);
+    }
+  }
+  .action-bar{
+  	@include margin-top(1);
+  	@include padding-top(1);
+  	border-top:1px dotted $border-color;
+    a{
+    	@include margin-right(1.2);
+    	@include padding-bottom(0.25);
+    	text-transform: uppercase;
+    }
+    a:last-child{
+    	@include margin-right(0);
+    }
+    a:hover,
+    a:focus{
+    	text-decoration: none;
+    	border-bottom: solid 2px $special-color;
+    }
+    a .fa{
+    	@include margin-right(0.3);
+    }
+  }
+}
+
+//Hover Styles
+.nav-card:hover,
+.nav-card:focus{
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	.primary-info{
+    h1{
+      display: inline-block;
+      border-bottom: solid 2px $primary-color;
+    }
+  }
+ }
+
+/*For aligning text to the left*/
+.nav-card.text-left{
+  text-align: left;
+}

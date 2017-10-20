@@ -1,0 +1,222 @@
+/* ************************** UTILITIES **************************** */
+/* ***************************************************************** */
+
+.vertical-center-container{
+	display: -webkit-box !important; /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box !important;    /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox !important; /* TWEENER - IE 10 */
+	display: -webkit-flex !important;
+	display: flex !important;
+}
+
+.vertical-center{
+	padding: 1em 0.5em;
+    text-align: center;
+    margin: auto;
+}
+
+.center-container{
+	@include center();
+}
+
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+.text-left{
+	text-align: left;
+}
+
+
+//Special header with top border
+/*Mostly used on the main page for 4 steps, consent and privacy sections*/
+// Example:
+// <h1 class="special-header-with-top-border center-container">
+// 	<em>4 simple steps</em> <span>connect you to health research at the University of Michigan</span>
+// </h1>
+.special-header-with-top-border{
+	text-align: center;
+	em{
+		border-top: solid 4px $secondary-color;
+		color: $institution-primary-color;
+		font-style: normal;
+		display: inline-block;
+    @include padding(.5);
+	}
+	span{
+		display: block;
+		color: $secondary-font-color;
+		@include font-size(1);
+		font-weight: normal;
+		@include margin-top(.5);
+	}
+}
+
+
+//Center position a background image.
+.center-positioned-background{
+	background-position: center !important;
+}
+
+//Add background color to a block element
+.neutral-background,
+.special-background,
+.white-background,
+.error-background{
+	@include padding(1);
+}
+.neutral-background{
+	background-color: $neutral-background-color;
+}
+.special-background{
+	background-color: $special-background-color;
+}
+.white-background{
+	background-color: #fff;
+}
+.error-background{
+	background-color: $error-background-color;
+}
+
+//Add border color to a block element
+.border{
+	border:solid 1px $border-color;
+}
+
+//Font colors
+.primary-font-color{
+	color:$primary-color;
+}
+.secondary-font-color{
+	color:$secondary-font-color;
+}
+.error-font-color,
+.error-font-color:hover{
+	color:$error-font-color;
+}
+.success-font-color,
+.success-font-color:hover{
+	color:$success-font-color;
+}
+
+//Secondary font style
+.secondary-font-style{
+		@extend .secondary-font-color;
+		line-height: 140%;
+}
+
+//Dividers
+.divider{
+	border-top: dotted 1px $border-color;
+	@include margin-top(0.5);
+	@include margin-bottom(0.5);
+}
+.stylized-divider{
+	&:after{
+		content: "--------------- § ---------------";
+    text-align: center;
+    display: block;
+    top: -1.3em;
+    @include font-size(.8);
+    padding: 1.5em 0.25em 0 0.25em;
+    color:darken($border-color,10%);
+	}
+}
+//Apply to first grid element
+.vertical-divider{
+	border-right: dotted 1px $border-color;
+}
+.stylized-divider{
+	&:after{
+		content: "--------------- § ---------------";
+    text-align: center;
+    display: block;
+    top: -1.3em;
+    @include font-size(.8);
+    padding: 1.5em 0.25em 0 0.25em;
+    color:darken($border-color,10%);
+	}
+}
+//Margins
+.margin-top-small{
+	@include margin-top(.5);
+}
+.margin-right-small{
+	@include margin-right(.5);
+}
+.margin-left-small{
+	@include margin-left(.5);
+}
+.margin-bottom-small{
+	@include margin-bottom(.5);
+}
+.margin-top{
+	@include margin-top(2);
+}
+.margin-bottom{
+	@include margin-bottom(2);
+}
+
+
+//Padding
+.padding-small{
+	@include padding-left(.5);
+	// @include padding-right(.5);
+}
+//small screen sizes
+@media only screen and (max-width : $md-screen-breakpoint) {
+	.vertical-divider{
+		border-right: 0px;
+	}
+}
+
+//Float elements
+.float-left{
+	float:left;
+}
+.float-right{
+	float:right;
+}
+
+//clearfix hack
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//Adding margin to icons
+.fa-margin-right{
+	@include margin-right(0.5);
+}
+.fa-margin-left{
+	@include margin-left(0.5);
+}
+
+//Display block
+.display-block{
+	display: block;
+}
+
+//flex-display
+.flex-container{
+	@include flex-display();
+	align-items: center;
+}
+//Full an element in a flex container to the right
+.pull-right{
+	margin-left: auto;
+}
+.flex-vertical {
+	@include flex-display();
+	flex-direction: column;
+}
+
+@media only screen and (max-width: $md-screen-breakpoint) {
+	.vertical-for-small-only {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

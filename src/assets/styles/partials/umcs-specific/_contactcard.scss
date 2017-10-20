@@ -1,0 +1,58 @@
+.contact-card{
+	background: $special-background-color;
+	padding: 1em;
+	border-radius: $card-border-radius;
+	@include margin-bottom(2);
+	header{
+		h1{
+			@include margin-bottom(.5);
+      // color: $accent-color;
+      text-transform: uppercase;
+      line-height: 130%;
+		}
+	}
+	address{
+		.fa{
+			// color: $primary-color;
+			@include font-size(1);
+		}
+		.name{
+			@include font-size(1.05);
+			font-weight: 500;
+			display: block;
+		}
+		.tel{
+			display: block;
+		}
+		.email{
+			display: block;
+		}
+	}
+	.no-info{
+		font-style: italic;
+		font-weight: normal !important;
+		color: $secondary-font-color;
+    @include font-size(.9);
+	}
+}
+
+//If the contact card has an action icon like edit
+.contact-card.action-icon{
+	header{
+		h1{
+			width: 85%;
+			display: inline-block;
+		}
+		.edit-button{
+			float: right;
+			display: inline-block;
+			text-align:right;
+			a{
+        @extend .hvr-fade;
+      }
+			a:hover{
+				color:$secondary-color;
+			}
+		}
+	}
+}

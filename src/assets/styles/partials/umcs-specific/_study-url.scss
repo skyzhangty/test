@@ -1,0 +1,95 @@
+.study-url{
+  @include padding-left(.5);
+  @include padding-right(.5);
+  @include margin-top(1);
+  @include margin-bottom(4);
+  margin-left: auto;
+  margin-right: auto;
+  // border-radius: $border-radius;
+  border: solid 1px $border-color;
+  // @include box-shadow();
+  background-color: #ffffff;
+  @include padding(1);
+  .url-container{
+    .label{
+      @include font-size($form-help-text-font-size);
+      color: $secondary-font-color;
+      text-transform: uppercase;
+      font-weight: bold;
+      @include margin-bottom(-.5);
+    }
+    .url{
+      color: $link-font-color;
+      @include margin-bottom(-.5);
+    }
+    .small-outline-button{
+      text-transform: uppercase;
+      @include font-size($form-help-text-font-size);
+      @include padding(.25);
+    }
+  }
+
+  .help-text{
+    line-height: 120%;
+    @include font-size($form-help-text-font-size);
+    color: $secondary-font-color;
+  }
+}
+
+@media screen and (max-width: $md-screen-breakpoint){
+  .study-url{
+    .url{
+      display: block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (min-width: $md-screen-breakpoint) and (max-width:$lg-screen-breakpoint){
+  .study-url{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .url-container{
+      .url{
+        a{
+          @include margin-right(.5);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lg-screen-breakpoint) and (max-width:$xl-screen-breakpoint){
+  .study-url{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    .url-container{
+      .url{
+        a{
+          @include margin-right(.5);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xl-screen-breakpoint){
+  .study-url{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    @include padding-left(3);
+    @include padding-right(3);
+    .url-container{
+      .url{
+        a{
+          @include margin-right(.5);
+        }
+      }
+    }
+  }
+}

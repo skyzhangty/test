@@ -1,0 +1,80 @@
+body > footer {
+	background-color: $institution-primary-color;
+	@include padding(1);
+	@include margin-top(2);
+
+	nav{
+		ul{
+			padding-left: 0;
+			li{
+				@include margin-top(.5);
+				list-style: none;
+				a{
+					display: inline-block;
+					color:#fff;
+					line-height: 120%;
+					&:hover{
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.contact-card{
+		background-color: #fff;
+		border-top:8px solid $institution-secondary-color;
+	}
+	.social{
+		text-align: center;
+		a{
+			color: rgba(#fff,.7);
+			@include font-size(1.5);
+			@extend .hvr-fade;
+			&:hover{
+				color: rgba(#fff,1);
+			}
+		}
+	}
+	.logos{
+		border-top: dotted 1px rgba(#fff,.3);
+		@include padding-top(1);
+
+		.michr-logo,
+		.um-logo{
+			text-align: center;
+			img{
+					width: 300px;
+			}
+		}
+	}
+	.copyright{
+		color: rgba(#fff,.8);
+		@include font-size(.7);
+		text-align: center;
+	}
+	.heap-badge{
+		width: 100%;
+		text-align: center;
+		@include margin-bottom(3);
+	}
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+	body > footer{
+		.logos{
+			.michr-logo{
+				text-align: left;
+			}
+			.um-logo{
+				text-align: right;
+			}
+		}
+		.copyright{
+			text-align: right;
+		}
+		.heap-badge{
+			text-align: right;
+			margin-bottom:0;
+		}
+	}
+}

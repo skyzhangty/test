@@ -1,0 +1,14 @@
+{
+  "loggedInUser": {
+    "userId": 1,
+    "roles": [
+      "ADMIN"
+    ],
+    "userName": "harriford",
+    "email": "harriford@bladerunner.com",
+    "fullName": "Harrison Ford",
+    "firstName": "Harrison",
+    "lastName": "Ford"
+  },
+  "lovedOnes": []
+}

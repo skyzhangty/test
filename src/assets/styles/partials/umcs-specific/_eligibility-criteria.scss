@@ -1,0 +1,21 @@
+.eligibility{
+  .label{
+    font-weight: 500;
+    line-height: 150%;
+  }
+  >section{
+    .tag{
+      background: #fff;
+    }
+  }
+  .healthy-eligibility{
+    @include margin-top(1.5);
+    background-color: #fff;
+    @include border-radius($border-radius);
+    @include padding(.5);
+    border: solid 1px $border-color;
+    .tag{
+      background: $neutral-background-color;
+    }
+  }
+}

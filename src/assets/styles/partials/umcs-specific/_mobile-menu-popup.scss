@@ -1,0 +1,24 @@
+@media screen and (max-width: $md-screen-breakpoint){
+  .mobile-menu-popup{
+      width:100%;
+      li{
+        position: relative;
+        .menu-badge{
+          right:0px;
+          top:0px;
+        }
+      }
+      .logged-in-as-info {
+          background: darken($neutral-background-color,10%);
+          padding: 1em;
+          line-height: 140%;
+      }
+      nav{
+        @include margin-bottom(1);
+        border-bottom:solid 1px $border-color;
+      }
+      nav:last-child{
+        border-bottom:0;
+      }
+  }
+}

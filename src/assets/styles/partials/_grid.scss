@@ -1,0 +1,642 @@
+/* *********************** LAYOUT GRIDS*********************** */
+/* *********************************************************** */
+
+/***
+  title: Grids
+  section: Atoms
+  description: Layout grids are the foundation of our resposive layout. Our grid system is very simple to understand. We are using a 12 column grid. You create a row by using the .grid-row class, and create columns within that row by using the grid-* classes. The colums can be of any width in number between 1 and 12. As an example, the class grid-1-2 will create a column of width 50% in a row. We have specific classes for a width of golden ratio as defined in the example below. You can specify such layout for specific screen sizes as well between small(sm), medium(md), large(lg) and x-large(xl). A class grid-lg-1-3 will create a container of 33% width on large screens.
+  example:
+  	<div class="grid-row">
+	    <div class="grid-golden-smaller grid-md-1-3"><p>Golden Smaller Segment on small screens, 1/3rd width on medium screens</p></div>
+	    <div class="grid-golden-larger grid-md-1-3"><p>Golden Larger Segment on small screens, 1/3rd width on medium screens</p></div>
+	</div>
+***/
+
+/* Global grid */
+.grid-1,
+.grid-1-1,
+.grid-1-2,
+.grid-1-3,
+.grid-2-3,
+.grid-1-4,
+.grid-3-4,
+.grid-1-6,
+.grid-5-6,
+.grid-1-12,
+.grid-2-12,
+.grid-3-12,
+.grid-4-12,
+.grid-5-12,
+.grid-6-12,
+.grid-7-12,
+.grid-8-12,
+.grid-9-12,
+.grid-10-12,
+.grid-11-12,
+.grid-12-12,
+.grid-golden-larger,
+.grid-golden-smaller {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.grid-1-12 {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+
+.grid-1-6,
+.grid-2-12 {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+
+.grid-1-4,
+.grid-3-12 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.grid-1-3,
+.grid-4-12 {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+
+.grid-golden-smaller{
+	width: 38.2716%;
+	*width: 38.2406%;
+}
+
+.grid-5-12 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+
+.grid-1-2,
+.grid-6-12 {
+    width: 50%;
+    *width: 49.9690%;
+}
+
+.grid-7-12 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+
+.grid-golden-larger{
+	width: 61.7283%;
+	*width: 61.6973%;
+}
+
+.grid-2-3,
+.grid-8-12 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+
+.grid-3-4,
+.grid-9-12 {
+    width: 75%;
+    *width: 74.9690%;
+}
+
+.grid-5-6,
+.grid-10-12 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+
+.grid-11-12 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+
+.grid-1,
+.grid-1-1,
+.grid-12-12 {
+    width: 100%;
+}
+
+//Centering classes : Add .grid-centered to your column to center columns
+.grid-centered{
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+
+}
+
+/* Specific grids for small screens */
+@media screen and (min-width: $sm-screen-breakpoint) {
+    .grid-sm-1,
+    .grid-sm-1-1,
+    .grid-sm-1-2,
+    .grid-sm-1-3,
+    .grid-sm-2-3,
+    .grid-sm-1-4,
+    .grid-sm-3-4,
+    .grid-sm-1-6,
+    .grid-sm-5-6,
+    .grid-sm-1-12,
+    .grid-sm-2-12,
+    .grid-sm-3-12,
+    .grid-sm-4-12,
+    .grid-sm-5-12,
+    .grid-sm-6-12,
+    .grid-sm-7-12,
+    .grid-sm-8-12,
+    .grid-sm-9-12,
+    .grid-sm-10-12,
+    .grid-sm-11-12,
+    .grid-sm-12-12,
+    .grid-sm-golden-larger,
+	.grid-sm-golden-smaller {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-sm-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-sm-1-6,
+    .grid-sm-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-sm-1-4,
+    .grid-sm-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-sm-1-3,
+    .grid-sm-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+	.grid-sm-golden-smaller{
+		width: 38.2716%;
+		*width: 38.2406%;
+	}
+
+    .grid-sm-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-sm-1-2,
+    .grid-sm-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-sm-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+	.grid-sm-golden-larger{
+		width: 61.7283%;
+		*width: 61.6973%;
+	}
+
+    .grid-sm-2-3,
+    .grid-sm-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-sm-3-4,
+    .grid-sm-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-sm-5-6,
+    .grid-sm-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-sm-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-sm-1,
+    .grid-sm-1-1,
+    .grid-sm-12-12 {
+        width: 100%;
+    }
+
+    //Centering classes : Add .grid-sm-centered to your column to center columns
+    .grid-sm-centered{
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;
+    }
+}
+
+/* Specific grids for medium width screens */
+@media screen and (min-width: $md-screen-breakpoint) {
+    .grid-md-1,
+    .grid-md-1-1,
+    .grid-md-1-2,
+    .grid-md-1-3,
+    .grid-md-2-3,
+    .grid-md-1-4,
+    .grid-md-3-4,
+    .grid-md-1-6,
+    .grid-md-5-6,
+    .grid-md-1-12,
+    .grid-md-2-12,
+    .grid-md-3-12,
+    .grid-md-4-12,
+    .grid-md-5-12,
+    .grid-md-6-12,
+    .grid-md-7-12,
+    .grid-md-8-12,
+    .grid-md-9-12,
+    .grid-md-10-12,
+    .grid-md-11-12,
+    .grid-md-12-12,
+    .grid-md-golden-larger,
+	.grid-md-golden-smaller {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-md-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-md-1-6,
+    .grid-md-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-md-1-4,
+    .grid-md-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-md-1-3,
+    .grid-md-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+	.grid-md-golden-smaller{
+		width: 38.2716%;
+		*width: 38.2406%;
+	}
+
+    .grid-md-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-md-1-2,
+    .grid-md-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-md-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+	.grid-md-golden-larger{
+		width: 61.7283%;
+		*width: 61.6973%;
+	}
+
+    .grid-md-2-3,
+    .grid-md-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-md-3-4,
+    .grid-md-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-md-5-6,
+    .grid-md-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-md-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-md-1,
+    .grid-md-1-1,
+    .grid-md-12-12 {
+        width: 100%;
+    }
+
+    //Centering classes : Add .grid-md-centered to your column to center columns
+    .grid-md-centered{
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;
+    }
+}
+
+/* Specific grids for large width screens */
+@media screen and (min-width: $lg-screen-breakpoint) {
+    .grid-lg-1,
+    .grid-lg-1-1,
+    .grid-lg-1-2,
+    .grid-lg-1-3,
+    .grid-lg-2-3,
+    .grid-lg-1-4,
+    .grid-lg-3-4,
+    .grid-lg-1-6,
+    .grid-lg-5-6,
+    .grid-lg-1-12,
+    .grid-lg-2-12,
+    .grid-lg-3-12,
+    .grid-lg-4-12,
+    .grid-lg-5-12,
+    .grid-lg-6-12,
+    .grid-lg-7-12,
+    .grid-lg-8-12,
+    .grid-lg-9-12,
+    .grid-lg-10-12,
+    .grid-lg-11-12,
+    .grid-lg-12-12,
+    .grid-lg-golden-larger,
+	.grid-lg-golden-smaller {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-lg-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-lg-1-6,
+    .grid-lg-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-lg-1-4,
+    .grid-lg-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-lg-1-3,
+    .grid-lg-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+	.grid-lg-golden-smaller{
+		width: 38.2716%;
+		*width: 38.2406%;
+	}
+
+    .grid-lg-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-lg-1-2,
+    .grid-lg-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-lg-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+	.grid-lg-golden-larger{
+		width: 61.7283%;
+		*width: 61.6973%;
+	}
+
+    .grid-lg-2-3,
+    .grid-lg-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-lg-3-4,
+    .grid-lg-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-lg-5-6,
+    .grid-lg-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-lg-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-lg-1,
+    .grid-lg-1-1,
+    .grid-lg-12-12 {
+        width: 100%;
+    }
+
+	//Centering classes : Add .grid-lg-centered to your column to center columns
+    .grid-lg-centered{
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;      
+    }
+}
+
+/* Specific grids for extra large width screens */
+@media screen and (min-width: $xl-screen-breakpoint) {
+    .grid-xl-1,
+    .grid-xl-1-1,
+    .grid-xl-1-2,
+    .grid-xl-1-3,
+    .grid-xl-2-3,
+    .grid-xl-1-4,
+    .grid-xl-3-4,
+    .grid-xl-1-6,
+    .grid-xl-5-6,
+    .grid-xl-1-12,
+    .grid-xl-2-12,
+    .grid-xl-3-12,
+    .grid-xl-4-12,
+    .grid-xl-5-12,
+    .grid-xl-6-12,
+    .grid-xl-7-12,
+    .grid-xl-8-12,
+    .grid-xl-9-12,
+    .grid-xl-10-12,
+    .grid-xl-11-12,
+    .grid-xl-12-12,
+    .grid-xl-golden-larger,
+	.grid-xl-golden-smaller {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
+
+    .grid-xl-1-12 {
+        width: 8.3333%;
+        *width: 8.3023%;
+    }
+
+    .grid-xl-1-6,
+    .grid-xl-2-12 {
+        width: 16.6667%;
+        *width: 16.6357%;
+    }
+
+    .grid-xl-1-4,
+    .grid-xl-3-12 {
+        width: 25%;
+        *width: 24.9690%;
+    }
+
+    .grid-xl-1-3,
+    .grid-xl-4-12 {
+        width: 33.3333%;
+        *width: 33.3023%;
+    }
+
+	.grid-xl-golden-smaller{
+		width: 38.2716%;
+		*width: 38.2406%;
+	}
+
+    .grid-xl-5-12 {
+        width: 41.6667%;
+        *width: 41.6357%;
+    }
+
+    .grid-xl-1-2,
+    .grid-xl-6-12 {
+        width: 50%;
+        *width: 49.9690%;
+    }
+
+    .grid-xl-7-12 {
+        width: 58.3333%;
+        *width: 58.3023%;
+    }
+
+	.grid-xl-golden-larger{
+		width: 61.7283%;
+		*width: 61.6973%;
+	}
+
+    .grid-xl-2-3,
+    .grid-xl-8-12 {
+        width: 66.6667%;
+        *width: 66.6357%;
+    }
+
+    .grid-xl-3-4,
+    .grid-xl-9-12 {
+        width: 75%;
+        *width: 74.9690%;
+    }
+
+    .grid-xl-5-6,
+    .grid-xl-10-12 {
+        width: 83.3333%;
+        *width: 83.3023%;
+    }
+
+    .grid-xl-11-12 {
+        width: 91.6667%;
+        *width: 91.6357%;
+    }
+
+    .grid-xl-1,
+    .grid-xl-1-1,
+    .grid-xl-12-12 {
+        width: 100%;
+    }
+
+    //Centering classes : Add .grid-xl-centered to your column to center columns
+    .grid-xl-centered{
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;
+    }
+}
+
+/* The container class (think of a row) within which the grids can reside */
+.grid-row {
+display: -webkit-flex;
+-webkit-flex-flow: row wrap;
+display: -ms-flexbox;
+-ms-flex-flow: row wrap;
+display: flex;
+flex-flow: row wrap;
+}
+
+/* Adding padding to each unit */
+.grid-row > div, .grid-row > section {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        @include padding(.5);
+}
+@media screen and (min-width: $lg-screen-breakpoint) {
+    .grid-row > div, .grid-row > section {
+      @include padding(1);
+    }
+}
+/* You can specify no padding for a unit by adding a class "grid-no-padding" */
+.grid-no-padding > div, .grid-no-padding > section {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+}

@@ -1,0 +1,17 @@
+header.stripped-header .logo{
+	@include margin-top(0);
+	background: url(../images/logo-small.png) no-repeat scroll 50% 0 transparent;
+	height:75px;
+	@include center();
+}
+
+
+
+//medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+	header.stripped-header{
+		.logo{
+			@include margin-top(2);
+		}
+	}
+}

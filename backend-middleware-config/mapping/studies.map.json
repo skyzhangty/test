@@ -1,0 +1,30 @@
+{
+  "id": {
+    "attribute": "id",
+    "type": "numeric",
+    "key": true
+  },
+  "is-archived": {
+    "attribute": "archived",
+    "type": "boolean"
+  },
+  "new-participants": {
+    "attribute": "newVolunteers",
+    "type": "numeric"
+  },
+  "new-messages": {
+    "attribute": "newMessages",
+    "type": "numeric"
+  },
+  "posting-status": {
+    "attribute": "active",
+    "type": "boolean"
+  },
+  "title": {
+    "attribute": "title",
+    "defaultOrder": "asc"
+  },
+  "irb-num": {
+    "attribute": "irbNum"
+  }
+}

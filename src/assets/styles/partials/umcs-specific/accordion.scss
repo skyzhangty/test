@@ -1,0 +1,63 @@
+.accordion{
+  .collapse-handler{
+		h2{
+			@include font-size($h4-font-size);
+			color: $accent-color;
+			text-transform: uppercase;
+			line-height: 130%;
+			border-bottom:solid 2px $secondary-color;
+			@include padding-bottom(.25);
+			@extend .fadeIn;
+		}
+		&:hover,
+		&:focus{
+			text-decoration: none;
+			.fa-plus-square-o:before{
+					content:"\f0fe";
+			}
+		}
+	}
+	/*If section is open, show minus icons*/
+	.collapse-handler[aria-expanded="true"]{
+		.fa-plus-square-o{
+			&:before{
+				content: "\f147";
+			}
+		}
+		&:hover,
+		&:focus{
+			.fa-plus-square-o:before{
+					content:"\f146";
+			}
+		}
+	}
+	/*Animation for collapse handlers*/
+	a.collapse-handler:nth-of-type(2){
+		h2{animation-delay: .05s;}
+	}
+	a.collapse-handler:nth-of-type(3){
+		h2{animation-delay: .08s;}
+	}
+	a.collapse-handler:nth-of-type(4){
+		h2{animation-delay: .11s;}
+	}
+	a.collapse-handler:nth-of-type(5){
+		h2{animation-delay: .14s;}
+	}
+	a.collapse-handler:nth-of-type(6){
+		h2{animation-delay: .17s;}
+	}
+	.collapse{
+		@include margin-bottom(2);
+	}
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+.accordion{
+  .collapse-handler{
+      h2{
+        @include font-size($h3-font-size);
+      }
+    }
+  }
+}

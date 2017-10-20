@@ -1,0 +1,11 @@
+footer.stripped-footer{
+	background-color: transparent;
+	text-align: center;
+	@include font-size(0.6);
+	color:#999;
+  border-top: 0;
+}
+footer.stripped-footer div:first-child a{
+	@include font-size(0.9);
+	color:#999;
+}

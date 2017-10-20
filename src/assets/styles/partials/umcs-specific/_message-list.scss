@@ -1,0 +1,25 @@
+ol.message-list{
+  list-style: none;
+	padding:0.5em;
+  li{
+    margin-left: 0;
+    @include margin-bottom(1);
+    display: -webkit-flex;
+    display: flex;
+    background-color: $neutral-background-color;
+    border-top: 0;
+  }
+  li.self{
+    justify-content: flex-end;
+  }
+  li:before{
+    content: none;
+  }
+}
+
+// For small screen sizes
+@media screen and (max-width:$md-screen-breakpoint){
+  ol.message-list{
+  	padding:0.5em 0;
+  }
+}

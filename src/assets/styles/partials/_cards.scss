@@ -1,0 +1,179 @@
+/* SG
+# Cards/Basic Card
+
+A card is a set of interaction that serves as an entry point to more detailed information. Cards may contain a photo, text, and a link about a single subject. They may display content containing elements of varying size, such as photos with captions of variable length.
+Detailed on this page is a basic card. This card is extended to create more specific cards based on the content being served.
+
+```
+<article class="card">
+    <header>
+      <h1>Title</h1>
+    </header>
+    <section class="summary">
+        Summary/Description
+    </section>
+    <section class="actions">
+      <a href="#">Action</a>
+      <a href="#">Action</a>
+      <a href="#">Action</a>
+    </section>
+</article>
+```
+*/
+
+/* ************* BASE STYLES *********************** */
+/* ************************************************* */
+.card{
+		@extend .fadeIn;
+		@include box-shadow();
+		@include padding(1);
+		background-color: #fff;
+		@include border-radius($card-border-radius);
+		text-rendering: optimizeLegibility;
+		transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		&:hover{
+			@include hvr-box-shadow();
+		}
+		> a{
+			color: $base-font-color;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+    .banner{
+      @extend .flash;
+			@include margin-top(-.7);
+			@include margin-right(-.5);
+      text-align: right;
+      color: $success-font-color;
+      @include font-size(.9);
+			animation-delay: 1.5s;
+			-webkit-animation-delay:1.5s;
+      .fa{
+        @include margin-right(.3);
+      }
+    }
+		h1{
+			@include font-size($h4-font-size);
+			@include margin-bottom(.8);
+		}
+		p{
+			@include margin-bottom(0);
+			line-height:145%;
+		}
+		.actions{
+			a{
+				&:hover{
+					text-decoration: none;
+					color: $secondary-color;
+				}
+				&:after{
+					content: " | ";
+					color: #999;
+				}
+				&:last-child:after{
+					content: "";
+				}
+			}
+		}
+}
+
+
+//For modern mobile devices like iPhone 6 and Samsung galaxy
+@media screen and (min-width:321px) and (max-width: $md-screen-breakpoint){
+	.card{
+		@include padding-top(1);
+		border-top: 6px solid $secondary-color;
+		cursor: default;
+		.actions{
+      text-align: center;
+			@include margin-top(.8);
+			margin-bottom: 0;
+			@include font-size(.9);
+		}
+	}
+}
+
+// For medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+	//Regular study snippet
+	.card{
+		border-left: 8px solid $secondary-color;
+		.banner{
+			@include margin-top(-.5);
+		}
+		h1{
+			@include font-size($h4-font-size);
+			@include margin-bottom(.5);
+		}
+		p{
+			@include font-size(.95);
+			line-height: 155%;
+			@include margin-bottom(.5);
+		}
+
+		.actions{
+      text-align: center;
+			@include margin-top(1);
+			@include font-size(.85);
+			text-transform: uppercase;
+			a{
+				@include margin-right(2);
+				&:hover{
+					border-bottom: solid 2px;
+					color: $link-font-color;
+				}
+				&:after{
+					content: "";
+				}
+				&:last-child{
+					margin-right:0;
+				}
+			}
+		}
+	}
+}
+
+/* SG
+# Cards/Card with a New banner
+
+
+Cards can have a __“New”__ banner.
+
+## Markup notes
+
+Notice the __.new__ class on the card and the __banner__ section that adds the actual banner text.
+
+```
+<article class="card new">
+    <div class="banner">
+      <span class="fa fa-star" aria-hidden="true"></span><span class="show-for-sr">This is a</span>New<span class="show-for-sr">study</span>
+    </div>
+    <header>
+      <h1>Title</h1>
+    </header>
+    <section class="summary">
+        Summary/Description
+    </section>
+    <section class="actions">
+      <a href="#">Action</a>
+      <a href="#">Action</a>
+      <a href="#">Action</a>
+    </section>
+</article>
+```
+*/
+
+@media screen and (min-width:321px) and (max-width: $md-screen-breakpoint){
+  .card.new,
+	.card.active{
+      border-top-color:$success-font-color;
+  }
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+  .card.new,
+	.card.active{
+      border-left-color:$success-font-color;
+  }
+}

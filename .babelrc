@@ -1,0 +1,14 @@
+{
+  "presets": [
+    // Transpile React components to JavaScript
+    "react",
+    // webpack understands the native import syntax, and uses it for tree shaking
+    "es2015", "stage-0",
+    //necessary for async/await to work 
+    "env"
+  ],
+  "plugins": [
+    "react-hot-loader/babel"
+    // Enables React code to work with HMR.
+  ]
+}

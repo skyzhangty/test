@@ -1,0 +1,184 @@
+.header-st{
+  // Global Nav styling common to all page levels
+  .global-nav-st{
+    @include padding-left(.25);
+    @include padding-right(.25);
+    @include flex-display();
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $institution-primary-color;
+    @include font-size($form-help-text-font-size);
+    a.logo-M{
+      @include padding(.35);
+      color: $institution-secondary-color;
+      img{
+        height: 1em;
+      }
+    }
+    nav{
+      margin-left: auto;
+      a{
+        @include padding-left(.7);
+        @include padding(.35);
+        color: $institution-secondary-color;
+        display: inline-block;
+      }
+      div{
+        display: inline-block;
+        a:after {
+          content: "·";
+        }
+        a:last-child:after{
+          content:"";
+        }
+      }
+    }
+  }
+
+  // Styling specific to level 2 page/s Ex: Study Home
+  &.level-2{
+    .title-container{
+      @include padding-left(8);
+      @include padding-right(8);
+      @include padding-top(2);
+      @include padding-bottom(3);
+      background-color: $institution-primary-color;
+      color: #fff;
+      @include hvr-box-shadow();
+      .study-status{
+        display: inline-block;
+        @include padding-left(.5);
+        @include padding-right(.5);
+        @include margin-bottom(.5);
+        color: #fff;
+        @include font-size($form-help-text-font-size);
+        text-transform: uppercase;
+        &.active{
+          background-color: $success-font-color;
+        }
+        &.inactive{
+          background-color: $error-font-color;
+        }
+        &.archived{
+          background-color: #fff;
+          color: $institution-primary-color;
+        }
+      }
+      h1{
+        color: #fff;
+        line-height: 125%;
+        font-weight: 300;
+      }
+      .aux-info{
+        font-weight: 300;
+        .date{
+          @include margin-right(1);
+        }
+        a{
+          color: $institution-secondary-color;
+          @include font-size($form-help-text-font-size);
+          .fa{
+            @include margin-right(.25);
+          }
+        }
+      }
+    }
+  }
+
+  // Styling specific to level 3 pages Ex: Interested Participants
+  &.level-3{
+    .global-nav-st{
+      a.logo-M{
+        border-right: dotted 1px #ccc;
+      }
+      nav{
+        border-left: dotted 1px #ccc;
+      }
+      h1{
+        color: #fff;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        @include font-size($form-help-text-font-size);
+        line-height: 120%;
+        @include margin-top(.25);
+        @include margin-bottom(.25);
+        font-weight: 400;
+        @include padding-left(.5);
+        @include padding-right(.5);
+      }
+    }
+
+    .title-container{
+      background-color: #fff;
+      @include padding(1);
+      @include padding-left(1.5);
+      padding-bottom: 0;
+      @include flex-display();
+      -moz-box-shadow: 0 8px 8px -8px rgba(0,0,0,0.23);
+      -webkit-box-shadow:0 8px 8px -8px rgba(0,0,0,0.23);
+      box-shadow: 0 8px 8px -8px rgba(0,0,0,0.23);
+      @include margin-bottom(2);
+      border-bottom: solid 1px $border-color;
+
+      .local-nav-container{
+        a{
+          @include font-size($form-help-text-font-size);
+        }
+        h1{
+          color: $institution-primary-color;
+          @include font-size($h1-font-size);
+          line-height: 120%;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+//For small screens
+@media screen and (max-width: $md-screen-breakpoint){
+  .header-st{
+    &.level-2{
+      .title-container{
+        @include padding-left(1);
+        @include padding-right(1);
+        @include padding-top(1);
+        @include padding-bottom(2);
+        h1{
+          @include font-size($h2-font-size);
+          font-weight: 400;
+        }
+        .aux-info{
+          @include font-size($form-help-text-font-size);
+          a{
+            display: block;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+//For medium screens
+@media screen and (min-width: $md-screen-breakpoint) and (max-width:$lg-screen-breakpoint){
+  .header-st{
+    &.level-2{
+      .title-container{
+        @include padding-left(4);
+        @include padding-right(4);
+        @include padding-top(2);
+        @include padding-bottom(3);
+        h1{
+          @include font-size($h2-font-size);
+          font-weight: 400;
+        }
+      }
+      .aux-info{
+        @include font-size($form-help-text-font-size);
+      }
+    }
+  }
+}

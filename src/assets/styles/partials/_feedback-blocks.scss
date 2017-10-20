@@ -1,0 +1,100 @@
+/* *********************** FEEDBACK BLOCKS *********************** */
+/* *************************************************************** */
+.feedback-block{
+	@include font-size (1);
+	padding: .6em 0 .6em 0;
+	background-color: $neutral-background-color;
+	@include border-radius($border-radius);
+	color: $feedback-block-font-color;
+	overflow: hidden;
+	@include margin-bottom(1.5);
+	width: 100%;
+	-webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+	@extend .shake;
+}
+
+.feedback-block .feedback-block-media{
+	float: left;
+	@include margin-left(0.8);
+	@include margin-right(1.2);
+}
+
+.feedback-block .feedback-block-media .fa{
+	@include font-size(2);
+}
+
+.feedback-block .feedback-block-body {
+	overflow: hidden;
+	_overflow: visible;
+	zoom: 1;
+	@include margin-left(0.8);
+}
+
+.feedback-block .feedback-block-body h4,
+.feedback-block .feedback-block-body h1,
+.feedback-block .feedback-block-body p{
+	color: $feedback-block-font-color;
+}
+
+.feedback-block .feedback-block-body h4,
+.feedback-block .feedback-block-body h1,
+.feedback-block .feedback-block-body p{
+	@include margin-bottom(0);
+}
+
+.feedback-block .feedback-block-body p{
+	line-height: 140%;
+}
+
+div.success{
+	background-color: $success-background-color;
+}
+div.error{
+	background-color: $error-background-color;
+}
+div.info{
+	background-color: $info-background-color;
+}
+
+/*Changing the icons based on class types*/
+.feedback-block .feedback-block-media .fa{
+	font-family: 'Pe-icon-7-stroke';
+}
+.feedback-block.success .feedback-block-media .fa:before{
+	content: "\e66c";
+}
+.feedback-block.error .feedback-block-media .fa:before{
+	content:"\e681";
+}
+.feedback-block.info .feedback-block-media .fa:before{
+	content: "\e647";
+}
+
+@media screen and (max-width: $md-screen-breakpoint){
+	.feedback-block{
+		text-align: center;
+	}
+	.feedback-block .feedback-block-media,
+	.feedback-block .feedback-block-body{
+		  float: none;
+		  text-align: center;
+		  margin: 0.2em 0;
+	}
+	.feedback-block .feedback-block-body p{
+		@include margin-top(0.3);
+	}
+}
+
+
+/*Special feedback styling for the main page*/
+.main-page-feedback{
+	@include margin(1);
+	.feedback-block{
+	}
+	&:empty{
+		display: none;
+	}
+}

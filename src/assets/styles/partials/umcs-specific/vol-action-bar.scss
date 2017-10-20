@@ -1,0 +1,106 @@
+.vol-action-bar{
+  @include padding(1);
+  @include flex-display();
+  border-bottom: solid 1px $border-color;
+  .list-actions{
+    flex-grow: 1;
+    &.larger{
+      flex-grow: 6;
+    }
+    .label-button-group{
+      @include font-size($form-help-text-font-size);
+      color: $secondary-font-color;
+      text-transform: uppercase;
+    }
+    .secondary-nav.horizontal{
+      line-height: 120%;
+      @include margin-right(.5);
+      a{
+        @include padding(.5);
+        @include font-size($form-help-text-font-size);
+        border-right: solid 1px #fff;
+        .fa{
+          display: inline-block;
+          @include margin-right(.25);
+        }
+      }
+    }
+  }
+
+  &.toggleEnabled{
+    .list-actions{
+      .secondary-nav.horizontal{
+        line-height: 120%;
+        @include margin-right(.5);
+        a{
+          background-color: #ccc;
+          &:hover{
+            background-color: #ccc;
+            cursor: default;
+          }
+        }
+      }
+    }
+    &.enabled{
+      .secondary-nav.horizontal{
+        a,a:hover{
+          background-color: #366caf;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.modal-select-labels{
+  padding:0.5em;
+}
+.modal-select-labels,
+.labels-list{
+  ol,ul{
+		list-style: none;
+
+    margin-top: 0;
+    margin-bottom: 0;
+		li{
+			margin-left: 0;
+	    border-top: 0;
+	    padding:0;
+	    @include margin-bottom(.25);
+	    @extend .fadeIn;
+      background-color: #fff;
+      .fa{
+        @include margin-right(.5);
+        &.Label_1{
+          color: #FAEBD7 !important;
+        }
+        &.Label_2{
+          color: #F0E68C !important;
+        }
+        &.Label_3{
+          color: #00FFFF !important;
+        }
+      }
+      a{
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      a.active{
+        background-color: $primary-color;
+        color: white;
+      }
+      a:hover:not(.active){
+       background-color: $secondary-color;
+       color: white;
+      }
+		}
+		li:last-child{
+			@include margin-bottom(0);
+		}
+		li:before{
+	    content: none;
+	  }
+	}
+}

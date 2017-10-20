@@ -1,0 +1,95 @@
+.message{
+	.message-date-time{
+		display: block;
+		width: 100%;
+		text-align: center;
+		@include font-size($form-help-text-font-size);
+	}
+	.message-bubble{
+		.banner{
+			display: none;
+      @extend .flash;
+			@include margin-top(-.7);
+			@include margin-right(-.5);
+      text-align: right;
+      color: $success-font-color;
+      @include font-size(.9);
+			animation-delay: 1.5s;
+			-webkit-animation-delay:1.5s;
+      .fa{
+        @include margin-right(.3);
+      }
+    }
+		header{
+			h3{
+				@include font-size($h4-font-size);
+			}
+		}
+		position: relative;
+		@include padding(1);
+	  @include margin-bottom(1);
+		@include border-radius($border-radius);
+		background-color: #fff;
+		@include box-shadow();
+		// border-top: 10px solid;
+	}
+	/* For the bubble tail */
+	.message-bubble:before {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-color: transparent rgba(0, 0, 0, 0.12);
+		display: block;
+		width: 0;
+		bottom: -12px;
+	}
+	.message-sender-name{
+		@include font-size($form-help-text-font-size);
+		@include margin-top(-.5);
+	}
+}
+
+/******** If the sender is you ********/
+.message.self {
+	@extend .fadeInRight;
+	.message-bubble{
+		border-right:solid 6px $primary-color;
+	}
+	.message-bubble:before {
+			border-width: 0 0 12px 12px;
+			border-color: transparent $primary-color;
+			right: 3px;
+	}
+	.message-sender{
+		text-align: right;
+	}
+}
+
+/******** If the sender is someone else ********/
+.message.other {
+	@extend .fadeInLeft;
+	.message-bubble{
+		border-left:solid 6px $secondary-color;
+	}
+	.message-bubble:before {
+			border-width: 0 12px 12px 0;
+			border-color: transparent $secondary-color;
+			right: 0;
+			left: 3px;
+	}
+	.message-sender{
+	}
+}
+
+/******** New message ********/
+.message.other.new{
+	.message-bubble{
+		border-left:solid 6px $success-font-color;
+		&:before{
+			border-color: transparent $success-font-color;
+		}
+		.banner{
+			display: block;
+		}
+	}
+}

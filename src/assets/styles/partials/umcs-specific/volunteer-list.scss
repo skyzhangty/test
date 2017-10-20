@@ -1,0 +1,143 @@
+/* SG
+# Volunteer List
+
+A list of volunteer snippiets.
+
+```
+<section class="volunteer-list">
+  <h1 class="list-header"><span id="spanVolunterListNumber" class="margin-right-small">2</span><span id="spanVolunterListTitle">New Volunteers</span></h1>
+
+  <ol>
+    <li>
+      <a href="profile-01.html">
+        <article class="volunteer-snippet New">
+          <div class="banner">
+            New
+          </div>
+
+          <div class="body">
+            <div class="checkbox">
+              <label class="show-for-sr" for="checkbox-4">Selet this volunteer</label>
+              <input type="checkbox" id="checkbox-4" onchange="enableActionBar()" class="vol-checkbox">
+            </div>
+            <div class="main">
+              <section class="vol-info">
+                <header>
+                  <h1>Woodrow Nikolaus Woodrow Does That</h1>
+                </header>
+                <section class="summary">
+                  Male, 20 years old <br>
+                  Traverse City, MI
+                </section>
+              </section>
+              <section class="aux-info">
+                <div class="doi">08-04-17</div>
+                <div class="message-notification m-0">
+                  <span class="fa fa-envelope fa-margin-right"></span><span class="messages">0</span>
+                </div>
+              </section>
+              <section class="labels" id="sectionLabels-4"><span class="
+                No_Label
+              ">
+                No_Label
+              </span></section>
+            </div>
+          </div>
+        </article>
+      </a>
+    </li>
+
+    <li>
+      <a href="profile-01.html">
+        <article class="volunteer-snippet New">
+          <div class="banner">
+            New
+          </div>
+
+          <div class="body">
+            <div class="checkbox">
+              <label class="show-for-sr" for="checkbox-5">Selet this volunteer</label>
+              <input type="checkbox" id="checkbox-5" onchange="enableActionBar()" class="vol-checkbox">
+            </div>
+            <div class="main">
+              <section class="vol-info">
+                <header>
+                  <h1>Alexanne Stanton</h1>
+                </header>
+                <section class="summary">
+                  Female, 56 years old <br>
+                  Ann Arbor, MI
+                </section>
+              </section>
+              <section class="aux-info">
+                <div class="doi">08-04-17</div>
+                <div class="message-notification m-1">
+                  <span class="fa fa-envelope fa-margin-right"></span><span class="messages">1</span>
+                </div>
+              </section>
+              <section class="labels" id="sectionLabels-5"><span class="
+                Label_2
+              ">
+                Label_2
+              </span></section>
+            </div>
+          </div>
+        </article>
+      </a>
+    </li>
+
+</ol>
+</section>
+```
+*/
+
+.volunteer-list{
+  h1.list-header{
+  	@include margin-top(.264);
+    @include padding-left(.5);
+    @include padding-right(.5);
+    @include font-size($h4-font-size);
+    font-weight: 500;
+    color: $institution-primary-color;
+  }
+  @include margin-top(2);
+  ol,ul{
+		list-style: none;
+    @include box-shadow();
+    border-radius: $card-border-radius;
+    @extend .fadeIn;
+		li{
+			margin-left: 0;
+	    border-top: 0;
+	    padding:0;
+      margin-bottom: 0;
+	    background-color: $neutral-background-color;
+      border-bottom:solid 1px lighten($border-color, 10%);
+      &:last-child{
+        border-bottom: 0;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+    }
+    li:before{
+      content: none;
+    }
+  }
+}
+
+// For medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+  .volunteer-list{
+    .volunteer-list-header h1{
+      @include font-size($h1-font-size);
+      @include margin-bottom(3);
+    }
+    ol,li{
+      padding:0;
+    }
+    li{
+    	@include margin-bottom(0.3);
+    }
+  }
+}

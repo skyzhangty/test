@@ -1,0 +1,34 @@
+html {
+font-size: 100%;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+  padding-top:0 !important;
+  background-color: $neutral-background-color;
+}
+
+main{
+	z-index: 1;
+}
+main > section {
+	@include margin-top(type-margin-calculator($h2-font-size));
+	@include margin-bottom(type-margin-calculator($h2-font-size));
+}
+
+@media screen and (max-width: $md-screen-breakpoint){
+	main > section > section{
+		@include margin-bottom(1.4382 * 1.618 * 1.3/2);
+	}
+}
+
+.grid-row{
+	  //fix for seetting max widths for large screen sizes
+	  max-width: $xl-screen-breakpoint;
+	  margin: 0 auto;
+	  position: relative; /* Fix for absolute positioning here */
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic,300);

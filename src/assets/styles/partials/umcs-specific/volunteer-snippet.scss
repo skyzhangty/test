@@ -1,0 +1,343 @@
+// .volunteer-snippet{
+//   background-color:#fff;
+//   @include flex-display();
+//   flex-wrap: wrap;
+//   @include padding(1);
+//   border-left:solid 5px #fff;
+//   color: $base-font-color;
+//
+//   &.New{
+//     border-left:solid 5px $success-font-color;
+//   }
+//   .list{
+//     width: 100%;
+//     text-transform: uppercase;
+//     text-align: right;
+//     @include font-size($form-help-text-font-size);
+//     .Eligible{
+//       color: $accent-color;
+//       &:before{
+//         content:"\f00c";
+//         font-family: "fontawesome";
+//         font-style: normal;
+//         @include margin-right(.25);
+//       }
+//     }
+//     .Not{
+//       color:$error-font-color;
+//       &:before{
+//         content:"\f00d";
+//         font-family: "fontawesome";
+//         font-style: normal;
+//         @include margin-right(.25);
+//       }
+//     }
+//     .Pending{
+//       color: $secondary-color;
+//       &:before{
+//         content:"\f128";
+//         font-family: "fontawesome";
+//         font-style: normal;
+//         @include margin-right(.25);
+//       }
+//     }
+//     .New{
+//       color:$success-font-color;
+//       font-weight: 600;
+//       &:before{
+//         content:"\f005";
+//         font-family: "fontawesome";
+//         font-style: normal;
+//         @include margin-right(.25);
+//       }
+//     }
+//   }
+//   .checkbox{
+//     flex: 1;
+//   }
+//   .main{
+//     flex: 10;
+//     h1{
+//       @include font-size($h4-font-size);
+//       @include margin-bottom(0.2);
+//     }
+//     .volunteer-info{
+//       line-height: 140%;
+//       .break{
+//         display: block;
+//       }
+//     }
+//     .labels{
+//       //Cant seem to find a way to hide no_label from w3.js. So only styling the rest here and hiding No_Label. Discard later.
+//       span{
+//         @extend .tag;
+//       }
+//       .Label_1{
+//         background-color: #FAEBD7 !important;
+//       }
+//       .Label_2{
+//         background-color: #F0E68C !important;
+//       }
+//       .Label_3{
+//         background-color: #00FFFF !important;
+//       }
+//       .No_Label{
+//         display: none;
+//       }
+//     }
+//   }
+//
+//   .volunteer-status{
+//     flex: 3;
+//     text-align: right;
+//   }
+//   &:hover{
+//       background-color: lighten($special-background-color,5%);
+//       border-left-color:$primary-color;
+//       cursor: pointer;
+//       text-decoration: none;
+//       h1{
+//         text-decoration: underline;
+//       }
+//   }
+// }
+//
+// // For medium screen sizes and up
+// @media screen and (min-width: $md-screen-breakpoint){
+//   .volunteer-snippet{
+//     .volunteer-info{
+//       .break{
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+/* SG
+# Volunteer Snippet /
+
+Volunteer snippiet is used on interested volunteers and recommended volunteers.
+
+### Interested Volunteers
+An interested volunteer can have four states: New, Eligible, Not Eligible & Pending.
+An interested volunteer __may__ have a message notification count (optional).
+
+### Recommended Volunteers
+Recommended volunteers have only one state.
+
+```
+<h4>Interested volunteer snippet</h4>
+<article class="volunteer-snippet New">
+    <div class="banner">
+      New
+    </div>
+
+    <div class="body">
+      <div class="checkbox">
+        <label class="show-for-sr" for="checkbox-4">Selet this volunteer</label>
+        <input type="checkbox" id="checkbox-4" onchange="enableActionBar()" class="vol-checkbox">
+      </div>
+      <div class="main">
+        <section class="vol-info">
+          <header>
+            <h1>Woodrow Nikolaus</h1>
+          </header>
+          <section class="summary">
+            Male, 20 years old <br>
+            Traverse City, MI
+          </section>
+        </section>
+        <section class="aux-info">
+          <div class="doi">08-04-17</div>
+          <div class="message-notification">
+            <span class="fa fa-envelope fa-margin-right"></span><span class="messages">4</span>
+          </div>
+        </section>
+        <section class="labels"><span class="
+          Label_2">
+          Label_2</span><span class="Label_1
+        ">Label_1
+        </span></section>
+      </div>
+    </div>
+  </article>
+
+
+
+<h4 class="margin-top">Recommended volunteer snippet</h4>
+<article class="volunteer-snippet">
+  <div class="body">
+    <div class="checkbox">
+      <label class="show-for-sr" for="checkbox-{{ID}}">Selet this volunteer</label>
+      <input type="checkbox" id="checkbox-{{ID}}" onchange="enableActionBar()" class="vol-checkbox" />
+    </div>
+    <div class="main">
+      <section class="vol-info">
+        <header>
+          <h1>Woodrow Nikolaus</h1>
+        </header>
+        <section class="summary">
+          Male, 20 years old <br/>
+          Traverse City, MI
+        </section>
+      </section>
+    </div>
+  </div>
+</article>
+```
+*/
+.volunteer-snippet{
+  @extend .card;
+  flex-wrap: wrap;
+  border-left-color: $primary-color;
+  &.New{
+    border-left-color:$success-font-color;
+    .banner{
+      color: $success-font-color;
+      &:before{
+        content:"\f005";
+        font-family: "fontawesome";
+        font-style: normal;
+        @include margin-right(.25);
+      }
+    }
+  }
+  &.Eligible{
+    border-left-color:$special-color;
+    .banner{
+      color: $special-color;
+      &:before{
+        content:"\f00c";
+        font-family: "fontawesome";
+        font-style: normal;
+        @include margin-right(.25);
+      }
+    }
+
+    &.Not{
+      border-left-color:$error-font-color;
+      .banner{
+        color:$error-font-color;
+        &:before{
+          content:"\f00d";
+          font-family: "fontawesome";
+          font-style: normal;
+          @include margin-right(.25);
+        }
+      }
+    }
+  }
+  &.Pending{
+    border-left-color:$secondary-color;
+    .banner{
+      color: $secondary-color;
+      &:before{
+        content:"\f128";
+        font-family: "fontawesome";
+        font-style: normal;
+        @include margin-right(.25);
+      }
+    }
+  }
+
+  .banner{
+    margin-right: 0;
+  }
+
+  .body{
+    @include flex-display();
+    // flex-wrap: wrap;
+    align-items: top;
+    .checkbox{
+      flex:1;
+      margin: 0;
+      max-width: 3em;
+      input{
+        position: relative;
+        vertical-align: text-top;
+      }
+    }
+    .main{
+      flex:10;
+      @include flex-display();
+      align-items: top;
+      flex-wrap: wrap;
+      .vol-info{
+        flex: 3;
+        @include padding-right(.5);
+        header{
+          h1{
+            display: inline-block;
+            @include font-size($h4-font-size);
+            color: $primary-color;
+            font-weight: normal;
+            @include margin-bottom(0.2);
+            line-height: 120%;
+            border-bottom: solid 2px #fff;
+          }
+        }
+        .summary{
+          color: $base-font-color;
+          line-height: 130%;
+          @include margin-bottom(.2);
+        }
+      }
+      .aux-info{
+        color: $secondary-font-color;
+        text-align: right;
+        @include font-size($form-help-text-font-size);
+        .message-notification{
+          //Please discard. Only using for prototype
+          &.m-0{
+            display:none;
+          }
+        }
+      }
+      .labels{
+        width: 100%;
+        span{
+          @extend .tag;
+          @include font-size(.75);
+        }
+        .Label_1{
+          background-color: #FAEBD7 !important;
+        }
+        .Label_2{
+          background-color: #F0E68C !important;
+        }
+        .Label_3{
+          background-color: #00FFFF !important;
+        }
+        // Cant seem to find a way to hide no_label from w3.js. So only styling the rest here and hiding No_Label. Discard later.
+        .No_Label{
+          display: none;
+        }
+      }
+    }
+  }
+
+  &:hover{
+    background-color: lighten($special-background-color,5%);
+    @include hvr-box-shadow();
+    cursor: pointer;
+    text-decoration: none;
+    .main{
+      .vol-info{
+        header{
+          h1{
+            border-bottom: solid 2px $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:$md-screen-breakpoint){
+  .volunteer-snippet{
+    border-top: 0;
+    border-left: solid 5px;
+    @include padding-left(.5);
+    @include padding-right(.5);
+  }
+}

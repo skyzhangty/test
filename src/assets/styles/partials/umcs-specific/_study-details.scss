@@ -1,0 +1,304 @@
+.study-details-overview{
+  background-color: $primary-color;
+  background-image: url('../images/group-blue.png');
+  border: solid 1px $border-color;
+  @include padding-top(1);
+  @include padding-bottom(1);
+  @include padding-left(.5);
+  @include padding-right(.5);
+  @include box-shadow();
+  .study-header{
+    border-top: solid 8px $secondary-color;
+    background-color:#fff;
+    @extend .fadeIn;
+    @include box-shadow();
+    >div{
+      @include padding-bottom(.5);
+    }
+    h1{
+      @include font-size($h2-font-size);
+      @include margin-bottom(.5);
+      color: $institution-primary-color;
+    }
+    .separator{
+      width: 50px;
+      border-top:solid 5px lighten($secondary-font-color,10%);
+      @include margin-left(1);
+    }
+  }
+  .study-details-purpose-action{
+    background-color:#fff;
+    @extend .fadeIn;
+    @include padding-bottom(1);
+    >section{
+      @include padding-top(.5);
+    }
+    .study-purpose{
+      margin-bottom: 0;
+      line-height: 170%;
+      @include font-size(1.2);
+      color:#222;
+    }
+    .action-container{
+      border-left:dotted 1px $secondary-color;
+      text-align: center;
+      .stats{
+        @include margin-top(-1);
+      }
+      .stats-label{
+        @include margin-top(-.5);
+
+      }
+      .button-container{
+        @include margin-top(1.5);
+        .special-button{
+          @include font-size(1.2);
+          @include margin-bottom(.25);
+        }
+        a{
+          @include font-size(.9);
+        }
+        /*If the user is logged in as a study team member*/
+        .logged-in-as-study-team{
+          color: purple;
+          line-height: 130%;
+          display: block;
+          border: solid 1px purple;
+          padding: .5em;
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+
+/*Study Details*/
+.study-details{
+  	font-size: 1.1em;
+    @include margin-top(1);
+    @include margin-bottom(0);
+    .small-caps{
+    	font-weight: bold;
+    	color:#333;
+    }
+    ul{
+      /*Eyeballed value to add a smaller than normal padding to lists in a collapsable section*/
+      @include padding-left(1.75);
+      @include margin-top(.5);
+      @include margin-bottom(.5);
+      li{
+        line-height: 150%;
+        @include margin-bottom(.6);
+      }
+    }
+
+    /*Sticky header*/
+    .sticky-header{
+      display:none;
+    }
+    &.stickEmUp{
+      .sticky-header{
+        position: fixed;
+        display: block;
+        top:0;
+        left:0;
+        z-index: 5;
+        background-color: $special-color;
+        width: 100%;
+        margin-top: 0;
+        color: #fff;
+        @include font-size(1);
+        text-align: right;
+        @include padding(.5);
+        @extend .fadeInDown;
+
+        .logo-thumbnail{
+          float: left;
+          img{
+            /*The height & width is the same as that of the 'I am interested' button in the overview*/
+            height: 28px;
+            vertical-align: middle;
+          }
+        }
+
+        .victor-count{
+          display: none;
+        }
+        .special-button{
+          display: inline-block !important;
+          @include margin-left(.5);
+          margin-bottom:0;
+          background-color: #fff;
+          color: $special-color !important;
+          @include font-size(.9);
+          @include padding(.5);
+          &:hover{
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+
+    .additional-information{
+      h4{
+        @include margin-bottom(0.3);
+      }
+      div{
+      	@include margin-bottom(1);
+      }
+      .fa{
+      	@include margin-left(0.5);
+      	cursor: help;
+      	color: $secondary-font-color;
+      }
+    }
+}
+
+.study-contact{
+  background-color: $special-background-color;
+  padding-bottom: 0;
+  margin-top: 0;
+  @include margin-bottom(-2);
+  .contact-card{
+    h2{
+      @include font-size($h3-font-size);
+      @include margin-bottom(.75);
+    }
+    margin-bottom:0;
+  }
+}
+
+/*Popup styling for "I am interested" when no account is present*/
+.login-or-create-account{
+  .yes-no-container{
+    a{
+      @extend .nav-card;
+      display: block;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.4), 0 1px 6px rgba(0, 0, 0, 0.2);
+      background-color: lighten($secondary-color,40%);
+      font-weight: 500;
+      line-height: 130%;
+      .fa{
+        @include font-size(1.1);
+      }
+    }
+    a:first-child{
+      @include margin-bottom(.5);
+    }
+  }
+}
+
+//**** RESPONSIVENESS **//
+//medium screen sizes
+@media screen and (min-width: $md-screen-breakpoint){
+  .study-details-overview{
+    @include margin-top(-2);
+    @include padding-left(1);
+    @include padding-right(1);
+
+  }
+  .study-details,
+  .study-contact .contact-card{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .study-details{
+    font-size: 1.111em;
+    &.stickEmUp{
+      .sticky-header{
+        .victor-count{
+          display: inline;
+          @include font-size(.9);
+          .stat{
+            @include font-size(1.1);
+          }
+        }
+      }
+    }
+    .additional-information{
+      h4{
+        display: inline;
+        line-height: 230%;
+      }
+      section {
+        line-height: 230%;
+        div{
+          display: inline;
+        }
+      }
+    }
+  }
+  .login-or-create-account{
+    .yes-no-container{
+      @include flex-display();
+      a{
+        -webkit-flex:1;
+        flex:1;
+      }
+      a:first-child{
+        @include margin-right(.5);
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+//large screen sizes
+@media screen and (min-width: $lg-screen-breakpoint){
+  .study-details-overview{
+    @include margin-top(-2);
+    @include padding(2);
+    border-top:0;
+    .grid-row{
+      max-width: 1020px;
+    }
+  }
+  .study-looking-for{
+    display: block;
+  }
+  .study-details,
+	.study-contact .contact-card{
+		width: 65%;
+    /* Eyeballed value to ensure about 75chars per line for readability*/
+    max-width: 715px;
+	}
+}
+
+
+
+/********* OTHER STUDY STATES ******/
+/*Includes inactive study, show interest success and show interst failure*/
+
+.inactive-study,
+.show-interest-success,
+.show-interest-failure{
+  @include margin-bottom(-2.1);
+}
+.inactive-study{
+  .media{
+    color: $secondary-color;
+  }
+}
+.show-interest-success{
+  .study-header{
+    @include padding-bottom(2);
+  }
+  .media{
+    color: $success-font-color;
+  }
+}
+.show-interest-failure{
+  .media{
+    color: $secondary-color;
+  }
+  .eligibility{
+    .healthy-eligibility{
+      background-color: $neutral-background-color;
+    }
+  }
+  h4{
+    color: $error-font-color;
+    font-weight: 500;
+  }
+}

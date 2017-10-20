@@ -1,0 +1,28 @@
+.study-dashboard-actions{
+  @include padding(1);
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+  .study-dashboard-actions-container{
+    @include margin-top(-2.75);
+    @include flex-display();
+  }
+  .study-dashboard-actions{
+    text-align: right;
+    .primary-button{
+      background-color: $institution-secondary-color;
+      border-color: $institution-secondary-color;
+      color: $institution-primary-color !important;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      @include margin-right(.5);
+      &:hover{
+        text-decoration: underline !important;
+        background-color: darken($institution-secondary-color, 5%);
+        border-color: darken($institution-secondary-color, 5%);
+        // @include hvr-box-shadow;
+      }
+    }
+  }
+}

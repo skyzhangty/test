@@ -1,0 +1,47 @@
+.profile-completeness-section{
+  .progressbar{
+    float:left;
+    @include margin-left(0.8);
+  	@include margin-right(1.2);
+    .progress {
+      width: 120px;
+      height: 120px;
+      position: relative;
+        .progressbar-text{
+          @include font-size(1.5);
+        }
+     }
+     .progress > svg {
+         height: 100%;
+         display: block;
+     }
+  }
+  .content{
+    overflow: hidden;
+  	_overflow: visible;
+  	zoom: 1;
+  	@include margin-left(0.8);
+    .helptext{
+      @include font-size(.85);
+      line-height: 135%;
+    }
+  }
+}
+
+@media screen and (max-width: $md-screen-breakpoint){
+.profile-completeness-section{
+    .progressbar{
+      float:none;
+      text-align: center;
+      @include margin-bottom(.5);
+      .progress{
+        @include center();
+      }
+    }
+    .content{
+      float: none;
+      text-align: center;
+      margin: 0.2em 0;
+    }
+  }
+}

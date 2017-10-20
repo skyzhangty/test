@@ -1,0 +1,56 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jasmine": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "airbnb",
+        "plugin:jest/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jest"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "off",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-prototype-builtins": "off",
+        "no-param-reassign": "off",
+        "no-continue": "off",
+        "no-multi-assign": "off",
+        "no-plusplus": "off",
+        "no-return-assign": "off",
+        "class-methods-use-this": "off",
+        "react/jsx-uses-vars": [2],
+        "react/jsx-filename-extension": 0,
+        "react/sort-comp": "off",
+        "no-debugger": 0
+    }
+}

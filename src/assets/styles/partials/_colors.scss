@@ -1,0 +1,55 @@
+/* *********************** COLORS *********************** */
+// Utility font classes for colors
+/* ********************************************************** */
+
+
+/**
+ *
+ * =======================================================================
+   Primary Colors. Mostly applied in buttons
+ * =======================================================================
+ */
+.primary-color{
+	background: $primary_color;
+}
+.secondary-color{
+	background: $secondary_color;
+}
+.special-color{
+	background: $special_color;
+}
+
+/**
+ *
+ * =======================================================================
+   Font Colors
+ * =======================================================================
+ */
+.header-font-color{
+	color: $header-font-color;
+}
+.base-font-color{
+	color:$base-font-color;
+}
+.secondary-font-color{
+	color: $secondary-font-color;
+}
+.success-font-color{
+	color: $success-font-color;
+}
+.error-font-color{
+	color: $error-font-color;
+}
+
+/**
+ *
+ * =======================================================================
+   Background Colors
+ * =======================================================================
+ */
+.neutral-background-color{
+	background-color: $neutral-background-color;
+}
+.special-background-color{
+	background-color: $special-background-color;
+}

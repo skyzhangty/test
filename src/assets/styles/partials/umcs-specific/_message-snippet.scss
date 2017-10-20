@@ -1,0 +1,104 @@
+/********************* MESSAGE SNIPPET ************** */
+/**************************************************** */
+
+.message-snippet{
+  border-left:solid 6px #fff;
+  display: block;
+
+  &:hover{
+    border-left-color:$primary-color;
+    text-decoration: none;
+    .flex-container{
+      .media{
+        color: $primary-color !important;
+      }
+      .content{
+        header{
+          h1{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .flex-container{
+      display: -webkit-flex;
+      display: flex;
+      background-color: #fff;
+      @include padding(1);
+     .media{
+       display:none;
+     }
+     .content{
+       flex: 1;
+       header{
+         display: -webkit-flex;
+         display: flex;
+         -webkit-flex-direction: row;
+         flex-direction: row;
+         h1{
+           @include font-size($h4-font-size);
+           @include margin-bottom(.25);
+           line-height: 130%;
+           color:$base-font-color;
+           font-weight: normal;
+           //Eyeball number to make sure long names do not cross over into dates
+           max-width: 63%;
+         }
+         time{
+           margin-left: auto;
+           @include font-size($form-help-text-font-size);
+           color:$secondary-font-color;
+         }
+       }
+      .summary{
+        @include font-size(.85);
+        color:$secondary-font-color;
+        line-height: 130%;
+      }
+     }
+  }
+}
+.message-snippet.new{
+  border-left-color:$success-font-color;
+  &:hover{
+    border-left-color: $primary-color;
+  }
+  .flex-container{
+    .media{
+      color: $success-font-color;
+    }
+    .content{
+      header{
+        h1{
+          font-weight: 700;
+        }
+      }
+      .summary{
+        color: $base-font-color;
+      }
+    }
+  }
+}
+@media screen and (min-width: $md-screen-breakpoint){
+  .message-snippet{
+    .flex-container{
+      .media{
+        display: inherit;
+        width:10%;
+        @include font-size(2.5);
+        color:$secondary-color;
+        .fa{
+          position: absolute;
+        }
+      }
+      .content{
+        header{
+          h1{
+            max-width:80%;
+          }
+        }
+      }
+    }
+  }
+}

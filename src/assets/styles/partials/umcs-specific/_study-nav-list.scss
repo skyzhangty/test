@@ -1,0 +1,71 @@
+/* SG
+# Study Nav List
+
+Extends nav-list design pattern. Is used to display inline study navigation options.
+
+```
+<ul class="study-nav-list">
+  <li>
+    <a href="interested-volunteers.html" class="nav-card">
+      <section class="primary-info">
+        <h1>Interested Participants</h1>
+        <span class="badge">9</span>
+      </section>
+      <section class="secondary-info">
+        These are particpants that have actively shown interest in this study by clicking the 'I am interested' button.
+      </section>
+    </a>
+  </li>
+  <li>
+    <a href="" class="nav-card">
+      <section class="primary-info">
+        <h1>Our Recommendations</h1>
+        <span class="badge">199</span>
+      </section>
+      <section class="secondary-info">
+        These are participants from the registry that might be a good match for this study but not have shown interest in it yet.
+      </section>
+    </a>
+  </li>
+</ul>
+```
+*/
+ul.study-nav-list,
+ol.study-nav-list{
+  @extend .nav-list;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  @include flex-display();
+  flex-direction: column;
+  li{
+    margin-left: 0;
+    border-top: 0;
+    padding:0;
+    @extend .fadeIn;
+    background-color: $neutral-background-color;
+    margin-bottom: 0;
+    border-bottom:solid 1px lighten($border-color, 10%);
+    &:last-child{
+      border-bottom: 0;
+    }
+    .nav-card{
+      display: block;
+      text-align: left;
+      border-left-color: #fff;
+      &:hover{
+        @include hvr-box-shadow();        
+      }
+      .primary-info{
+        h1{
+          @include margin-right(.25);
+        }
+        .badge{
+          @extend .flash;
+          animation-delay: 1.5s;
+    			-webkit-animation-delay:1.5s;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.find-by-topic .button-group .button{
+	@include margin-bottom(.850);
+	display: block !important;
+}
+
+.find-by-topic .button-group{
+	line-height: 120% !important;
+}
+
+.find-by-topic .button-group a{
+	@include font-size(0.850);	
+}
+
+@media only screen and (max-width : 42.666em) {
+	.find-by-topic .button-group{
+		text-align: center;		
+	}
+	
+}

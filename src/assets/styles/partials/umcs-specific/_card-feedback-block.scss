@@ -1,0 +1,19 @@
+/* *********************** INLINE FEEDBACK BLOCKS *********************** */
+/* *************************************************************** */
+.card-feedback-block{
+  @include padding(.75);
+  animation-delay: 5s;
+  @extend .slideOutDown2d;
+}
+.card-feedback-block.success{
+  color: darken($success-font-color,10%);
+  background-color: $success-background-color;
+}
+.card-feedback-block.error{
+  color: darken($error-font-color,10%);
+  background-color: $error-background-color;
+}
+.card-feedback-block.info{
+  color: $base-font-color;
+  background-color: $info-background-color;
+}

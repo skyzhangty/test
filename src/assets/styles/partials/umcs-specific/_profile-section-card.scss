@@ -1,0 +1,100 @@
+.profile-section-card{
+	@include padding(1);
+  @include margin-bottom(2);
+	background-color:#fff;
+	border-radius:$card-border-radius;
+  @include box-shadow();
+  border-left: solid 10px $secondary-color;
+  @extend .fadeIn;
+
+	header{
+		border-bottom:solid 2px $accent-color;
+		h1{
+			width: 85%;
+			display: inline-block;
+			@include margin-bottom(1);
+      color: $accent-color;
+      text-transform: uppercase;
+      line-height: 130%;
+		}
+		.edit-button{
+			float: right;
+			display: inline-block;
+			text-align:right;
+      a{
+        @extend .hvr-fade;
+      }
+			a:hover{
+				color:$secondary-color;
+			}
+		}
+	}
+
+	.content{
+		list-style: none;
+		margin-left: 0;
+		padding-left:0;
+    li{
+      @include margin-bottom(1);
+    }
+		.label{
+		   @include margin-right(.25);
+		   display: block;
+       line-height: 135%;
+       @include font-size(.8);
+		}
+		.label:after{
+			content:":";
+		}
+		.value{
+      display: block;
+			font-weight: bold;
+      line-height: 135%;
+			.tag{
+				white-space: normal;
+    		line-height: 120%;
+			}
+		}
+	}
+
+	.content + [data-readmore-toggle]{
+		border-top:solid 1px $border-color;
+		text-align: center;
+		@include padding-top(1);
+	}
+	.action-bar{
+		border-top:solid 1px $border-color;
+		text-align: center;
+		@include padding-top(1);
+	}
+	.no-info{
+		font-style: italic;
+		font-weight: normal !important;
+		color: $secondary-font-color;
+    @include font-size(.9);
+	}
+}
+
+.profile-section-card.special-section{
+  border-left: solid 10px lighten($primary-color,15%);
+}
+
+// big screen
+@media screen and (min-width: $lg-screen-breakpoint){
+	.profile-section-card{
+		.content{
+			.label{
+				display: inline-block;
+				width: 40%;
+				text-align: right;
+        vertical-align: top;
+        @include font-size(.95);
+			}
+			.value{
+        display: inline-block;
+        width: 58%;
+				vertical-align: top;
+			}
+		}
+	}
+}

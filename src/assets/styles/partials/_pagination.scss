@@ -1,0 +1,39 @@
+.pagination{
+	text-align: center;
+}
+.pagination .pagination-label{
+	@include margin-bottom(.50);
+}
+.pagination a{
+	@include font-size(1);
+	display:inline-block;
+}
+.pagination .fa-chevron-right{
+	@include margin-left(.5);
+}
+.pagination .fa-chevron-left{
+	@include margin-right(.5);
+}
+//Jump to a specific page
+.pagination .paginate-to-specific-page div{
+	background-color: $neutral-background-color;
+	padding:1em;
+}
+.pagination .paginate-to-specific-page div  form{
+	@include margin-bottom(1); 
+}
+.pagination .paginate-to-specific-page,
+.pagination .paginate-to-specific-page a{
+	@include font-size(0.9);
+}
+.pagination .paginate-to-specific-page label{
+	display: inline;
+	@include margin-right(0.5);
+}
+
+@media screen and (min-width: 42.666em){
+	.pagination .paginate-to-specific-page div{
+		width: 30%;
+		@include center();
+	}
+}

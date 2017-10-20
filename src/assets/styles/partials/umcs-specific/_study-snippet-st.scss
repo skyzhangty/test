@@ -1,0 +1,128 @@
+/* SG
+# Study Snippet/For Study Teams
+
+Extends card design pattern. Use __.active__ for an active study and __.inactive__ for an inactive study.
+
+```
+<!-- Active study -->
+<article class="study-snippet-st wow active">
+  <a href="">
+    <div class="banner">
+      <span class="fa fa-check" aria-hidden="true"></span>
+      <span class="show-for-sr">This study is</span>ACTIVE
+    </div>
+    <div class="study-irb">HUM00012345</div>
+    <h1 class="study-title">Energy Impact of Connected and Automated Vehicle Technology (Local Ann Arbor Drivers of Electric and Hybrid Vehicles)</h1>
+    <div class="study-pi">Van Rossum, Guido</div>
+    <section class="study-notifications">
+      <div>
+        <span class="number">300</span>New Volunteers
+      </div>
+      <div>
+        <span class="number">2</span>Messages
+      </div>
+      <div>
+        <span class="number">2100</span> Recommendations
+      </div>
+    </section>
+  </a>
+</article>
+
+<br/>
+
+<!-- Inactive study -->
+<article class="study-snippet-st wow inactive">
+  <a href="">
+    <div class="banner">
+      <span class="fa fa-times" aria-hidden="true"></span>
+      <span class="show-for-sr">This study is</span>INACTIVE
+    </div>
+    <div class="study-irb">HUM00012345</div>
+    <h1 class="study-title">Genetic determinants of ACEI prodrug activation</h1>
+    <div class="study-pi">Torvalds, Linus</div>
+    <section class="study-notifications">
+      <div>
+        <span class="number">3</span>New Volunteers
+      </div>
+      <div>
+        <span class="number">2</span>Messages
+      </div>
+    </section>
+  </a>
+</article>
+
+```
+*/
+
+.study-snippet-st{
+	@extend .card;
+	.banner{
+		//In this case, we only want the notifications to animte, not the banner.
+		animation: none;
+    text-transform: uppercase;
+	}
+	.study-irb,
+	.study-pi{
+		@include font-size($form-help-text-font-size);
+		color: $secondary-font-color;
+	}
+
+	.study-irb,
+	.study-title{
+		@include margin-bottom(.25);
+	}
+
+	.study-notifications{
+		text-align: center;
+		line-height: 120%;
+		@include margin-top(.5);
+		@include padding-top(1);
+		@extend .flash;
+		animation-delay: 1.5s;
+		-webkit-animation-delay:1.5s;
+
+		div{
+			display: inline-block;
+			@include font-size($form-help-text-font-size);
+			@include margin-right(0.25);
+			color: $primary-color;
+			.number{
+				@include margin-right(.25);
+				@extend .badge;
+			}
+
+			&:after{
+				content: " | ";
+				color: #999;
+			}
+			&:last-child:after{
+				content: "";
+			}
+		}
+	}
+
+	&.inactive{
+		border-top-color:$error-font-color;
+		.banner{
+			color: $error-font-color;
+		}
+	}
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+	.study-snippet-st{
+		.study-notifications{
+			text-transform: uppercase;
+			@include margin-top(.5);
+			div{
+				@include margin-right(1.25);
+				&:after{
+					content: "";
+				}
+			}
+		}
+		&.inactive{
+			border-left-color:$error-font-color;
+		}
+	}
+}

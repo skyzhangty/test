@@ -1,0 +1,101 @@
+.filters.popup_content{
+		max-width: 45em;
+}
+
+section.popup-main{
+	@include margin-top(1);
+	.fa{
+		@include margin-right(.25);
+	}
+	form{
+		.center-button-container{
+			@include margin-top(3);
+			@include padding-top(2);
+			@include padding-bottom(1);
+			button{
+				width: 30%;
+			}
+		}
+
+		/*If a filter has been applied*/
+		.filter-applied{
+			//default
+			.collapse-handler{
+				.fa-plus-square-o{
+					&:before{
+						color: $success-font-color;
+						content: "\f058";
+					}
+				}
+				//on hover if not open
+				&:hover,
+				&:focus{
+					text-decoration: none;
+					.fa-plus-square-o:before{
+							color: $accent-color;
+							content:"\f0fe";
+					}
+				}
+			}
+			//on hover if open
+			.collapse-handler[aria-expanded="true"]{
+				&:hover,
+				&:focus{
+					.fa-plus-square-o:before{
+							color: $accent-color;
+							content:"\f146";
+					}
+				}
+			}
+		}
+	}
+}
+
+// For small screen sizes
+@media screen and (max-width: $md-screen-breakpoint){
+  	.filters.popup_content{
+			width: 100%;
+			padding-bottom: 6em;
+			section.popup-main{
+				margin-top:0;
+				form{
+					.filter-options{
+						@include margin-bottom(6);
+					}					
+					.center-button-container{
+						position: fixed;
+						bottom:0;
+						left:0;
+						text-align: center;
+						background-color: #fff;
+						width: 100%;
+						@include padding-bottom(0);
+	    			@include padding-top(.5);
+						@include padding-bottom(.5);
+						border-top:solid 1px $border-color;
+						box-shadow: 0 5px 5px 5px #ccc;
+						button{
+							display:inline-block;
+							width:45%;
+							font-size: 1rem;
+							margin-bottom:0;
+						}
+					}
+				}
+			}
+		}
+}
+
+// For medium screen sizes
+@media screen and (min-width: $md-screen-breakpoint) and (max-width: $lg-screen-breakpoint){
+	.filters.popup_content{
+			width: 32em;
+		}
+}
+
+// For large screen sizes
+@media screen and (min-width: $lg-screen-breakpoint){
+	.filters.popup_content{
+			width: 45em;
+		}
+}

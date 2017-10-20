@@ -1,0 +1,64 @@
+.study-suggestion{
+  background-color: #fff;
+  @include padding(1);
+  .suggestor-message{
+    @include flex-display();
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    .media{
+      display: none;
+    }
+    .content{
+      flex:1;
+      line-height: 150%;
+      h1{
+        @include font-size($h4-font-size);
+        color:$primary-color;
+        @include margin-bottom(.25);
+      }
+      p{
+        @include font-size(.98);
+        @include margin-bottom(1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width:320px){
+  .study-snippet{
+    border-top:solid 1px $border-color;
+    @include padding-top(.5);
+  }
+}
+
+//For modern mobile devices like iPhone 6 and Samsung galaxy
+@media screen and (min-width:321px) and (max-width: $md-screen-breakpoint){
+  .study-suggestion{
+      .study-snippet{
+        border-right:solid 1px $border-color;
+        border-bottom:solid 1px $border-color;
+        border-left:solid 1px $border-color;
+      }
+  }
+}
+
+// For medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+  .study-suggestion{
+      .suggestor-message{
+        .media{
+            display: inherit;
+            @include font-size($h3-font-size);
+            color:$primary-color;
+            .fa{
+              @include margin-right(.5);
+            }
+        }
+      }
+      .study-snippet{
+        border-top:solid 1px $border-color;
+        border-right:solid 1px $border-color;
+        border-bottom:solid 1px $border-color;
+      }
+  }
+}

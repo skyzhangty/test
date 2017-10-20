@@ -1,0 +1,87 @@
+/****************** UMCS Specific Patterns ******************/
+
+//Menus
+@import 'partials/umcs-specific/globalmenu';
+@import 'partials/umcs-specific/stripped-header';
+@import 'partials/umcs-specific/mobile-banner';
+@import 'partials/umcs-specific/mobile-menu-popup';
+
+//Sub menus & navigation lists
+@import 'partials/umcs-specific/nav-card';
+@import 'partials/umcs-specific/nav-list';
+@import 'partials/umcs-specific/secondary-nav';
+
+//Page header
+@import 'partials/umcs-specific/page-header';
+
+//Login
+@import 'partials/umcs-specific/umcs-login';
+
+//Victor section
+@import 'partials/umcs-specific/victor-section';
+
+//Banners
+@import 'partials/umcs-specific/signup-banner';
+@import 'partials/umcs-specific/canned-query-banner';
+
+//4 Steps
+@import 'partials/umcs-specific/4steps';
+
+//Find + filter studies
+@import 'partials/umcs-specific/find-by-topic';
+@import 'partials/umcs-specific/filter-option';
+
+// Studies
+@import 'partials/umcs-specific/study-snippet';
+@import 'partials/umcs-specific/study-suggestion';
+@import 'partials/umcs-specific/study-list';
+@import 'partials/umcs-specific/study-results';
+@import 'partials/umcs-specific/eligibility-criteria';
+@import 'partials/umcs-specific/study-details';
+@import 'partials/umcs-specific/related-studies';
+
+//Messages
+@import 'partials/umcs-specific/message-snippet';
+@import 'partials/umcs-specific/message-snippet-list';
+@import 'partials/umcs-specific/message';
+@import 'partials/umcs-specific/message-list';
+@import 'partials/umcs-specific/conversation';
+
+//Profile
+@import 'partials/umcs-specific/profile-section-card';
+@import 'partials/umcs-specific/profile-completeness-section';
+
+// Footer
+@import 'partials/umcs-specific/globalfooter';
+@import 'partials/umcs-specific/stripped-footer';
+
+// Misc
+@import 'partials/umcs-specific/contactcard';
+@import 'partials/umcs-specific/card-feedback-block';
+@import 'partials/umcs-specific/accordion';
+
+
+
+/*------------------------------------------------------*/
+/* STUDY TEAM STYLES */
+/*------------------------------------------------------*/
+
+//Headers
+@import 'partials/umcs-specific/header-st';
+
+//Study Snippet
+@import 'partials/umcs-specific/study-snippet-st';
+
+//Study Dashboard
+@import 'partials/umcs-specific/study-dashboard-actions';
+@import 'partials/umcs-specific/study-url.scss';
+@import 'partials/umcs-specific/study-nav.scss';
+@import 'partials/umcs-specific/study-nav-list.scss';
+
+//Find + filter volunteers
+@import 'partials/umcs-specific/vol-search-filter-bar';
+@import 'partials/umcs-specific/vol-action-bar';
+
+// Volunteers
+@import "partials/umcs-specific/volunteer-snippet";
+@import "partials/umcs-specific/volunteer-list";

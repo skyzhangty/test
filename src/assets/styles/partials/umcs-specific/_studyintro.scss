@@ -1,0 +1,106 @@
+/* *********************** STUDY INTRO DESIGN PATTERN *********************** */
+/* *********************************************************************** */
+
+.study-intro{
+	background-color:#f7fafa;
+	border-bottom: solid 1px #999;	
+// 	padding-top: 3.02511rem; 
+// 	border-top: solid 20px $primary-color;
+	margin-top: 0 !important; 	
+}
+.study-intro .study-purpose{
+	@include font-size(1.15);
+}
+
+.study-intro h4,
+.study-details h4{
+	@include margin-bottom(0.3);
+}
+
+.study-intro h4 .fa{
+	@include margin-right(.3);
+	color: $primary-color;
+}
+
+.study-intro ul{
+	list-style: none;
+	@include margin-top(0.3);
+	@include padding-left(0);
+}
+
+.study-intro ul li{
+	background-color: $neutral-background-color;	
+	@include margin-bottom(0.3); 
+	@include padding-left(0.3);
+	@include padding-top(0.3);
+}
+.study-intro ul li .fa{
+	@include margin-right(0.2);	
+	float: right;
+	color: $secondary-color;
+}
+
+.study-intro .stats{
+	@include font-size(2.61);
+	text-align: center;
+	border-top: solid 1px #ccc;
+	padding-top: 1rem;
+}
+
+.study-intro .stats-label{
+	@include font-size(0.850);
+	text-align: center;				
+}	
+
+.study-intro .button-container{
+	margin-top:2.5em;
+	text-align: center;
+}
+
+.study-details ul{
+	@include padding-left(1.7);
+}
+
+.study-details .fa{
+	@include margin-left(.3);	 	
+}
+.study-details .additional-details a{
+	cursor: help;
+	color: $secondary-font-color;
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+	.study-intro .stats{
+		font-size: 47.123 px !important;
+		font-size: 2.617944444rem !important;
+		border-top: 0px;
+		padding-top: 0;
+	}
+	
+	.study-intro .stats-label{
+		font-size: 16px !important;
+		font-size: 0.889rem !important;
+	}
+	
+	.study-details h4{
+		display: inline-block;
+		float: left;
+		@include margin-right(.3);
+	}
+}
+
+@media screen and (min-width: $lg-screen-breakpoint){
+	.study-details{
+		width: 46em;
+		margin-left: auto;
+		margin-right: auto;		
+	}
+	
+	.contact-card{
+		width: 46em;
+		@include center();
+	}
+}
+	
+
+

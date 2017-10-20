@@ -1,0 +1,99 @@
+.conversation-container{
+  @include padding-top(2);
+  border-top:dotted 2px $border-color;
+  .conversation{
+  }
+  .write-message{
+    @include padding-top(2);
+    border-top:dotted 2px #ccc;
+    form{
+      @extend .vertical-center-container;
+      textarea{
+        width:80%;
+        flex-grow: 3;
+      }
+      button[type="submit"]{
+        color:$link-font-color;
+        font-family:$primary-font-family;
+        background:none;
+        border:none;
+        @extend .vertical-center;
+        .fa{
+          display: block;
+        }
+      }
+      button[type="submit"]:hover{
+        text-decoration: none;
+        cursor: pointer;
+        .link{
+          border-bottom:solid 2px $link-font-color;
+        }
+      }
+      button[type="submit"][disabled]{
+        color: $secondary-font-color;
+        cursor:not-allowed;
+        &:hover{
+          .link{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*The counter that displays below the message textarea*/
+/*We are using the max-length plugin (http://mimo84.github.io/bootstrap-maxlength/) that adds the counter at the end of the page before the <script>
+w3.includeHTML();
+</script></body> tag*/
+span.bootstrap-maxlength.label{
+  z-index: 2 !important;
+  @include font-size($form-help-text-font-size);
+  color: $secondary-font-color;
+}
+span.bootstrap-maxlength.label-important.label-danger.label{
+  color: $error-font-color;
+}
+
+/*Conversation screen sticky header*/
+.page-header.stickEmUp{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 5;
+  background-color: $primary-color;
+  width: 100%;
+  margin-top: 0;
+  @include padding(.5);
+  text-align: center;
+  @extend .fadeInDown;
+  nav,h1{
+    display: inline;
+  }
+  nav a{
+    color: #fff;
+    @include font-size(.85);
+      border-bottom: solid 1px #fff;
+  }
+  h1{
+    @include font-size(1.1);
+    color: #fff;
+    font-weight: bold;
+  }
+  p{
+    display: none !important;
+  }
+}
+
+// For small screen sizes
+@media screen and (max-width:$md-screen-breakpoint){
+  .conversation-container{
+    .write-message{
+      form{
+        button[type="submit"]{
+          width: 20%;
+        }
+      }
+    }
+  }
+}

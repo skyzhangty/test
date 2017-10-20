@@ -1,0 +1,43 @@
+/* SG
+# Breadcrumbs
+
+Create a breadcrumb in the app to maintain a trail.
+
+```
+<section class="breadcrumb">
+  <nav>
+    <a href="/"><span>Study List</span></a>
+    <a href="/"><span>Study Dashboard</span></a>
+    <a href="/"><span>Interested Participants</span></a>
+  </nav>
+</section>
+```
+*/
+.breadcrumb{
+  @include font-size($form-help-text-font-size);
+  a{
+    text-transform: uppercase;
+    &:hover{
+      text-decoration: none;
+      span{
+        border-bottom: solid 2px $link-font-color;
+      }
+    }
+    &:after {
+      content: "\f054";
+      font-family: FontAwesome;
+      @include padding-left(.4);
+      border-bottom: 0 !important;
+      color: lighten($secondary-font-color, 20%);
+    }
+    &:last-child{
+      text-decoration: none;
+      span{
+        border-bottom: solid 2px $link-font-color;
+      }
+      &:after{
+        content:"";
+      }
+    }
+  }
+}

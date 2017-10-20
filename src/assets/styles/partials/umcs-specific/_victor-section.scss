@@ -1,0 +1,289 @@
+@media screen and (max-width: $md-screen-breakpoint){
+  .victor-section{
+    background: $institution-primary-color;
+    background: $institution-primary-color url('../images/victor-images/1.jpg');
+    background-size: auto 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-top: 0;
+
+    .banner-container{
+      display: none;
+    }
+    .action-container{
+      @include margin-top(.5);
+      @include padding(1.25);
+      background-color: rgba($institution-primary-color,.85);
+      h1{
+        color: #fff;
+        @include font-size($h2-font-size);
+        font-weight: 500;
+        text-align: center;
+      }
+      form{
+        text-align: center;
+        input{
+          width: 100%;
+          margin-bottom: 0;
+        }
+        .twitter-typeahead{
+          width: 100%;
+        }
+        .primary-button{
+          background-color: $institution-secondary-color;
+          color:$institution-primary-color !important;
+          font-weight: 500;
+          @include margin-bottom(.25);
+        }
+        .more-search-options{
+          color:#fff;
+          @include font-size($form-help-text-font-size);
+        }
+      }
+    }
+    //Random image backgrounds
+    &.one{
+      background: $institution-primary-color url('../images/victor-images/1.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.two{
+      background: $institution-primary-color url('../images/victor-images/2.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.three{
+      background: $institution-primary-color url('../images/victor-images/3.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.four{
+      background: $institution-primary-color url('../images/victor-images/4.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.five{
+      background: $institution-primary-color url('../images/victor-images/5.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.six{
+      background: $institution-primary-color url('../images/victor-images/6.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.seven{
+      background: $institution-primary-color url('../images/victor-images/7.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    &.eight{
+      background: $institution-primary-color url('../images/victor-images/8.jpg');
+      background-size: auto 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media screen and (min-width: $md-screen-breakpoint){
+.victor-section{
+  @include margin-top(-2);
+  background: $institution-primary-color url('../images/victor-images/1.jpg');
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  //Set banner to show up on the right with 33% width
+  .banner-container{
+    -webkit-justify-content:flex-end;
+    justify-content: flex-end;
+  }
+
+  //The banner portion that contains the quote and the tagline
+  .banner{
+    width: 44.44%;
+
+    .quote{
+      position:relative;
+      @include margin-top(2);
+      @include font-size(1.222);
+      @include padding(.5);
+      font-style: italic;
+      background-color: rgba(0, 0, 0, .5);
+      color:#fff;
+      line-height: 130%;
+      margin:2em 0 0 0;
+      @include no-hyphens();
+
+      &:before{
+        content:"\f10d";
+        font-family: "fontawesome";
+        font-style: normal;
+        position:absolute;
+        text-align:center;
+        color:$institution-secondary-color;
+        @include font-size(3);
+        top:-.5em;
+        left:-1.25em;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+        width:2em;
+        /* Some space between the number and the content in browsers that support
+           generated content but not positioning it (Camino 2 is one example) */
+        margin-right:8px;
+        padding:4px;
+      }
+    }
+    .slogan{
+      @include margin-top(2);
+      @include padding(.5);
+      background-color: #fff;
+      border-top: solid 8px $secondary-color;
+      @include font-size(1.444);
+      font-weight: bold;
+      color:$institution-primary-color;
+      text-transform: uppercase;
+      line-height: 130%;
+      @include no-hyphens();
+    }
+  }
+
+  //The action section contains the search
+  .action-container{
+    @include padding(1);
+    @include margin-top(2);
+    background: rgba($institution-primary-color, .9);
+    h1{
+      display: none;
+    }
+    form{
+      @include center();
+      input{
+        width: 22em;
+      }
+      .twitter-typeahead{
+        .tt-input{
+          vertical-align: middle !important;
+        }
+      }
+      .primary-button{
+        background-color: $institution-secondary-color;
+        color:$institution-primary-color !important;
+        font-weight: 500;
+        @include margin-left(.25);
+        @include margin-right(.25);
+        &:hover{
+          background-color: darken($institution-secondary-color,5%);
+          color: lighten($institution-primary-color,5%);
+        }
+      }
+      .more-search-options{
+        color:#fff;
+        @include font-size($form-help-text-font-size);
+      }
+    }
+  }
+
+  //Random image backgrounds
+  &.one{
+    background: $institution-primary-color url('../images/victor-images/1.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.two{
+    background: $institution-primary-color url('../images/victor-images/2.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.three{
+    background: $institution-primary-color url('../images/victor-images/3.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.four{
+    background: $institution-primary-color url('../images/victor-images/4.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.five{
+    background: $institution-primary-color url('../images/victor-images/5.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.six{
+    background: $institution-primary-color url('../images/victor-images/6.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.seven{
+    background: $institution-primary-color url('../images/victor-images/7.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &.eight{
+    background: $institution-primary-color url('../images/victor-images/8.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+}
+}
+
+@media screen and (min-width: $lg-screen-breakpoint){
+.victor-section{
+  .banner{
+    width: 33.33%;
+  }
+}
+}
+
+@media screen and (min-width: $xl-screen-breakpoint){
+  .victor-section{
+      .banner{
+        .quote{
+          @include margin-top(4);
+        }
+        .slogan{
+          @include margin-top(3);
+        }
+      }
+      .action-container{
+        @include margin-top(4);
+      }
+    }
+}
+
+
+/*Specially inserting some additional micro breakpoints for finer adjustments*/
+// @media screen and (min-width:35em ) and (max-width: $md-screen-breakpoint){
+//   .victor-section{
+//     .banner-container{
+//       .banner{
+//         .quote{
+//           @include margin-top(2);
+//           @include padding(1);
+//         }
+//         .slogan{
+//           @include margin-bottom(1);
+//           @include padding(1);
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,25 @@
+.volunteer-slat{
+  background-color:#fff;
+  @include padding(1);
+  header h1{
+    @include font-size($h4-font-size);
+    @include margin-bottom(0.2);
+  }
+  .volunteer-info{
+    line-height: 140%;
+    .break{
+      display: block;
+    }
+  }
+}
+
+// For medium screen sizes and up
+@media screen and (min-width: $md-screen-breakpoint){
+  .volunteer-slat{
+    .volunteer-info{
+      .break{
+        display: none;
+      }
+    }
+  }
+}

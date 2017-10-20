@@ -1,0 +1,21 @@
+.page-header{
+  .fa{
+    @include font-size(.7);
+    color: lighten($base-font-color,50%);
+  }
+  h1{
+    font-weight: normal;
+    color: #666;
+    font-weight: 300;
+    text-align: center;
+  }
+  @include margin-top(.264);
+  @include margin-bottom(2);
+}
+
+@media screen and (max-width: $md-screen-breakpoint){
+  .page-header{
+    @include margin-bottom(2);
+    line-height: 140%;
+  }
+}

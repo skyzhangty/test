@@ -1,0 +1,586 @@
+/*!
+TYPEPLATE : STARTER KIT
+URL ........... http://typeplate.com
+VERSION ....... 2.0.0
+Github ........ https://github.com/typeplate/starter-kit
+AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
+LICENSE URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+*/
+
+
+
+/**
+ *
+ * =======================================================================
+   Application Font Stack
+ * =======================================================================
+ */
+
+html, button, input, select, textarea,
+.grid-row [class *= "grid"] {
+    /* Set your content font stack here: */
+    // font-family: 'Muli', Arial, sans-serif;
+}
+
+/**
+ *
+ * =======================================================================
+   Word Wrap
+ * =======================================================================
+ */
+
+.breakword {
+  word-wrap: break-word;
+}
+
+.normal-wrap {
+  word-wrap: normal;
+}
+
+.inherit-wrap {
+  word-wrap: auto;
+}
+
+
+/**
+ *
+ * =======================================================================
+   Base Type
+ * =======================================================================
+ *
+ */
+
+html {
+  font: normal  percentage($base-font-size)#{"/"}$base-line-height $primary-font-family; /* base font size 18px with 1.65 line-height */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizespeed;
+}
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  // word-wrap: break-word;
+  color: $base-font-color;
+}
+
+/**
+ *
+ * =======================================================================
+   Fine Print
+ * =======================================================================
+ */
+
+small {
+  font-size: 65%;
+}
+
+
+/**
+ *
+ * =======================================================================
+   Headings
+ * =======================================================================
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  margin-top: 0;
+  text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
+  color: $header-font-color;
+  font-family: $header-font-family;
+  // word-break: normal;
+  @include no-hyphens;
+}
+
+
+/**
+* Explanation:
+* margin-bottom = ( base font-size * base line-height ) / current font-size. This is calculated using the function type-margin-calculator
+*
+* Makes sure that there's always one unit of measure's worth of space between stuff
+* for headings. This is better than spacing using line-height because of the wrapping issue where we have
+* wrapping onto 2 lines with a high line-height.
+* font size(rem)=font size(px)/base font size(px)
+ */
+
+
+h1,
+.alpha {
+  @include font-size($h1-font-size);
+  @include margin-bottom(type-margin-calculator($h1-font-size));
+  color: $h1-font-color;
+}
+
+h2,
+.beta {
+  @include font-size($h2-font-size); //If you change this value, remember to change the margin-top for a section in main.
+  @include margin-bottom(type-margin-calculator($h2-font-size));
+}
+
+h3,
+.gamma {
+  @include font-size($h3-font-size);
+  // @include margin-bottom(type-margin-calculator($h3-font-size));
+  @include margin-bottom(.75);
+}
+
+h4, h5, h6,
+.delta {
+  @include font-size($h4-font-size);
+  @include margin-bottom(type-margin-calculator($h4-font-size));
+  @include margin-bottom(.6);
+  color: $h4-font-color;
+}
+
+//Extra large font (used mostly for extra large icons)
+.extra-large-font-size{
+  @include font-size($extra-large-font-size);
+}
+
+/**
+ *
+ * =======================================================================
+   Paragraphs and Indentation
+ * =======================================================================
+ */
+
+p {
+  margin: auto auto 2em; /* bottom margin for paragraphs */
+}
+
+/* text indent and no top margin on subsequent paragraphs */
+p + p {
+  text-indent: 0.75em; /* indent subsequent paragraphs */
+  margin-top: -0.75em;
+}
+
+
+/**
+ *
+ * =======================================================================
+   Hyphens
+ * =======================================================================
+ */
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var,
+strong,
+em,
+a,
+button {
+  /* Accepted values: [ none | manual | auto ] */ /* http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation */
+  @include no-hyphens;
+}
+
+
+/**
+ *
+ * =======================================================================
+ * Abbreviations Markup
+
+  <abbr title="hyper text markup language">HMTL</abbr>
+
+ * =======================================================================
+ */
+
+abbr, .small-caps {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: $small-font-color;
+}
+
+abbr[title]:hover {
+  cursor: help; /* cursor changed to a question mark when it has a title */
+}
+
+/**
+ *
+ * =======================================================================
+  Ordered Lists
+ * =======================================================================
+ */
+//  ol {
+//     counter-reset:li; /* Initiate a counter */
+//     margin-left:0; /* Remove the default left margin */
+//     padding-left:0; /* Remove the default left padding */
+// }
+// ol > li {
+//     position:relative; /* Create a positioning context */
+//     margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+//     padding:4px 8px; /* Add some spacing around the content */
+//     list-style:none; /* Disable the normal item numbering */
+//     // border-top:2px solid #666;
+//     // background:#f6f6f6;
+// }
+// ol > li:before {
+//     content:counter(li); /* Use the counter as content */
+//     counter-increment:li; /* Increment the counter by 1 */
+//     /* Position and style the number */
+//     position:absolute;
+//     top:-2px;
+//     left:-2em;
+//     -moz-box-sizing:border-box;
+//     -webkit-box-sizing:border-box;
+//     box-sizing:border-box;
+//     width:2em;
+//     /* Some space between the number and the content in browsers that support
+//        generated content but not positioning it (Camino 2 is one example) */
+//     margin-right:8px;
+//     padding:4px;
+//     // border-top:2px solid #666;
+//     border-radius: 50%;
+//     color:#fff;
+//     background:#666;
+//     font-weight:700;
+//     @include font-size(.9);
+//     text-align:center;
+// }
+// li ol,
+// li ul {margin-top:6px;}
+// ol ol li:last-child {margin-bottom:0;}
+// li p{
+//   @include margin-bottom(.75);
+// }
+
+ol {
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+    position:relative; /* Create a positioning context */
+    margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+    padding:4px 8px; /* Add some spacing around the content */
+    list-style:none; /* Disable the normal item numbering */
+    border-top:2px solid #666;
+    background:#f6f6f6;
+}
+ol > li:before {
+    content:counter(li); /* Use the counter as content */
+    counter-increment:li; /* Increment the counter by 1 */
+    /* Position and style the number */
+    position:absolute;
+    top:-2px;
+    left:-2em;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:2em;
+    /* Some space between the number and the content in browsers that support
+       generated content but not positioning it (Camino 2 is one example) */
+    margin-right:8px;
+    padding:4px;
+    border-top:2px solid #666;
+    color:#fff;
+    background:#666;
+    font-weight:700;
+    text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
+/**
+ *
+ * =======================================================================
+   FAQ List
+ * =======================================================================
+ */
+ .faq > p:after,
+ .faq > ol:after,
+ .faq > ul:after{
+    content: "--------------- § ---------------";
+    text-align: center;
+    display: block;
+    top: -1.3em;
+    @include font-size(.8);
+    padding: 1.5em 0.25em 0 0.25em;
+    color:darken($border-color,10%);
+ }
+ .faq > p:last-child:after,
+ .faq > ol:last-child:after,
+ .faq > ul:last-child:after{
+   content:"";
+ }
+
+/**
+ *
+ * =======================================================================
+   Definition Lists
+ * =======================================================================
+ */
+
+/**
+ * Lining Definition Style Markup
+ *
+  <dl class="lining">
+    <dt><b></b></dt>
+    <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.lining dd + dd:before {
+  content: ", ";
+}
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2em;
+}
+
+
+/**
+ * Dictionary Definition Style Markup
+ *
+  <dl class="dictionary-style">
+    <dt><b></b></dt>
+      <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2em;
+}
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+
+/**
+ *
+ * =======================================================================
+   Blockquotes
+ * =======================================================================
+ */
+
+/**
+ * Blockquote Markup
+ *
+  <figure>
+    <blockquote class="blockquote" cite="">
+      <p></p>
+    </blockquote>
+    <figcaption>
+      <cite>
+        <small><a href=""></a></small>
+      </cite>
+    </figcaption>
+  </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+
+.blockquote p:last-of-type {
+  margin-bottom: -0.825em;
+}
+
+.blockquote + figcaption {
+  display: block;
+  font-size: inherit;
+  text-align: right;
+}
+
+.blockquote + figcaption:before {
+  content: "-"; /* "-" is your citation flourish */
+}
+
+
+/**
+ *
+ * =======================================================================
+   Pull Quotes
+ * =======================================================================
+ */
+
+/**
+ * Pull Quotes Markup
+ *
+  <aside class="pull-quote">
+    <blockquote>
+      <p></p>
+    </blockquote>
+  </aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+.pull-quote {
+  position: relative;
+  padding: 1em;
+}
+.pull-quote:before,
+.pull-quote:after {
+  height: 1em;
+  opacity: 0.15;
+  position: absolute;
+  font-size: 4em;
+  color: #dc976e;
+}
+.pull-quote:before {
+  content: '“';
+  top: 0;
+  left: 0;
+}
+.pull-quote:after {
+  content: '”';
+  bottom: 0;
+  right: 0;
+}
+
+/**
+ *
+ * =======================================================================
+   Figures
+ * =======================================================================
+ */
+
+/**
+ * Figures Markup
+ *
+  <figure>
+    <figcaption>
+      <strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+    </figcaption>
+  </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+
+ /**
+ *
+ *
+=======================================================================
+   Tables
+ * =======================================================================
+ */
+
+/**
+ * Tables Markup
+ *
+  <table>
+  	<thead>
+  		<tr>
+  			<th></th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td></td>
+  		</tr>
+  	</tbody>
+
+  </table>
+ *
+ */
+
+table{
+	border-spacing: 0;
+}
+
+thead tr{
+	background-color: $neutral-background-color;
+}
+
+td{
+	padding: 0.5em 1em;
+	border-bottom: solid 1px $border-color;
+}
+
+ /**
+ *
+ * =======================================================================
+   Links
+ * =======================================================================
+ */
+
+a {
+  color: $link-font-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+
+/**
+ *
+ * =======================================================================
+   Address
+ * =======================================================================
+ */
+address{
+	font-style: normal;
+}
+
+ /**
+ *
+ * =======================================================================
+   Stats / Numbers
+ * =======================================================================
+ */
+ .stats{
+	 color:black;
+	 font-weight: 600;
+	 @include font-size(2.617944444);
+ }
+ .stats-label{
+	 color:black;
+ }
+
+ /**
+  *
+  * =======================================================================
+    Victors
+  * =======================================================================
+  */
+  .victors{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Times New Roman';
+  }

@@ -1,0 +1,21 @@
+.vol-search-filter-bar{
+  @include flex-display();
+  @include font-size($form-help-text-font-size);
+  @include padding(1);
+  border-bottom: solid 1px $border-color;
+  .search{
+    flex-grow: 1;
+  }
+  >div{
+    flex-grow: 1;
+    justify-content: flex-end;
+    display: flex;
+  }
+  .filter,.sort{
+    @include padding(.5);
+    align-self: flex-end;
+  }
+  .outline-button{
+    @include font-size(.9);
+  }
+}

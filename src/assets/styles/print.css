@@ -1,0 +1,196 @@
+/********* BASIC GLOBAL PRINT STYLES ***************/
+/***************************************************/
+a:after{
+  content:" (" attr(href) ") ";
+	font-size:0.8em;
+	font-weight:normal;
+}
+/*Stylize Lists*/
+ol {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+	padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+	position:relative; /* Create a positioning context */
+	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+	padding:4px 8px; /* Add some spacing around the content */
+	list-style:none; /* Disable the normal item numbering */
+	border-top:2px solid #666;
+	background:#f6f6f6;
+}
+ol > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+	/* Position and style the number */
+	position:absolute;
+	top:-2px;
+	left:-2em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	width:2em;
+	/* Some space between the number and the content in browsers that support
+	   generated content but not positioning it (Camino 2 is one example) */
+	margin-right:8px;
+	padding:4px;
+	border-top:2px solid #666;
+	color:#fff;
+	background:#666;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
+
+
+/*Hide Main menu except logo*/
+.main-menu-nav{
+  display: none;
+}
+.logo-small{
+  content:url('FRONT_END_BASE_URL/assets/images/logo.png');
+  height: 80px;
+  display: block;
+}
+.logo-small .show-for-sr{
+  display: none;
+}
+.full-header{
+  display: none;
+}
+.sticky-header{
+  display: none;
+}
+
+/* Hide Secondary navigation */
+.secondary-nav{
+  display: none;
+}
+
+/*Hide pagination except where you are in*/
+.pagination{
+  margin-bottom: 2em;
+}
+.pagination .small-outline-button,
+.pagination .paginate-to-specific-page{
+  display: none;
+}
+
+/*Hide footer links except technical contact information*/
+body > footer nav,
+body > footer .social,
+body > footer .logos,
+body > footer .copyright,
+body > footer .heap-badge{
+  display: none;
+}
+.technical-contact{
+  margin-top: 3em;
+  display: block;
+}
+
+/*************** STUDY SNIPPET ********************/
+/**************************************************/
+.study-snippet > a{
+  text-decoration: none;
+  color: #000 !important;
+}
+.study-snippet .banner{
+  text-align: right;
+  font-style: italic;
+}
+.study-snippet .study-overview{
+  margin-left:.25em;
+  color: #333;
+}
+.study-snippet .study-overview h1{
+  margin-bottom: .5em;
+}
+.study-snippet .actions a{
+  display: none;
+}
+.study-snippet .actions a.more{
+	display: block;
+  margin-top: 1em;
+}
+.study-snippet .actions a.more:after{
+  content:" (" attr(href) ") ";
+	font-size:0.8em;
+	font-weight:normal;
+}
+
+/*************** STUDY LIST ********************/
+/***********************************************/
+
+.study-list{
+  margin-bottom: 2em;
+  border-bottom: 2px dotted;
+}
+.study-list li{
+  margin-bottom: 1em;
+}
+/*************** STUDY DETAILS PAGE ***************/
+/**************************************************/
+
+.study-details-overview .study-header h1{
+  color:#00274c;
+  margin-bottom: .25em;
+}
+.study-details-overview .study-header header > div{
+  font-style: italic;
+}
+.study-details-overview .study-purpose{
+  font-size: 1.20em;
+}
+.study-details-overview .action-container{
+  display: none;
+}
+a.collapse-handler:after{
+  content:"";
+}
+.collapse-handler{
+  text-decoration: none;
+}
+.collapse-handler h2{
+  margin-top: 2em;
+  color: #3f51b5;
+  font-size: 1.2em;
+  border-bottom: solid 3px #FF9800;
+}
+.additional-information section{
+  width: 48%;
+  display: inline-block;
+}
+.additional-information h4{
+  color: #444;
+  margin-bottom: 0;
+}
+.additional-information a:after,
+.study-contact a:after{
+  content: "";
+}
+.study-contact{
+  margin-top:2em;
+  padding: 1em;
+  background-color: #e8ebf7;
+  border: solid 3px #3f51b5;
+}
+.study-contact h2{
+  margin-top: 0;
+  font-size: 1.3em;
+}
+.study-contact .name,
+.study-contact .tel,
+.study-contact .email{
+  display: block;
+  font-style: normal;
+}
+.study-contact .show-for-sr{
+  display: none;
+}
+.study-contact .name{
+  font-weight: 600;
+}

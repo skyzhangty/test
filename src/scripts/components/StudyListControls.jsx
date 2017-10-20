@@ -1,33 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import history from '../shared/history';
 
 class StudyListControls extends React.Component {
 	constructor() {
 		super();
-		this.sortStudies = this.sortStudies.bind(this);
+		this.sortStudyList = this.sortStudyList.bind(this);
 	}
 
-	sortStudies() {
-		// const queryParams = this.props.location.search;
-		this.props.sortStudies(this.props.sortBy);
+	sortStudyList(event) {
+		history.push({search: `sort-by=${event.target.value}`});
+		const queryParamsObject = {
+			'sort-by': this.props.sortBy,
+			'is-archived': this.props.isArchived
+		};
+		this.props.sortStudyList(queryParamsObject);
 	}
 
 	render() {
-		const {sortBy, canAddStudy} = this.props;
+		const {sortBy, isArchived} = this.props;
 		
 		return (
 			<section className="flex-container vertical-for-small-only">
 				<label htmlFor="selectSortStudiesBy" className="margin-right-small">
 					Sort by
 				</label>
-				<select id="selectSortStudiesBy" value={sortBy} onChange={this.sortStudies}>
+				<select id="selectSortStudiesBy" value={sortBy} onChange={this.sortStudyList}>
 					<option value="new-messages">New Messages</option>
-					<option value="new-participants">New Participants</option>
+					<option value="new-volunteers">New Participants</option>
 					<option value="posting-status">Posting Status</option>
 					<option value="title">Title</option>
 				</select>
 				{
-					!canAddStudy ? '' :
+					isArchived ? '' :
 						(<a className="small-primary-button pull-right show-for-medium-up">
 							<span className="fa fa-plus-circle fa-margin-right"/>
 							Add study
@@ -49,8 +54,8 @@ class StudyListControls extends React.Component {
 
 StudyListControls.propTypes = {
 	sortBy: PropTypes.string.isRequired,
-	canAddStudy: PropTypes.bool.isRequired,
-	sortStudies: PropTypes.func.isRequired
+	isArchived: PropTypes.bool.isRequired,
+	sortStudyList: PropTypes.func.isRequired
 };
 
 export default StudyListControls;

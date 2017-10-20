@@ -30,7 +30,7 @@ render(
 			<Wait />
 			<ReduxRouter>
 				<Switch>
-					<Route path="/studies" component={StudyList} />
+					<Route path="/studies/current" component={StudyList} />
 				</Switch>
 			</ReduxRouter>
 		</div>

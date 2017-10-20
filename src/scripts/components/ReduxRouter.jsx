@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import {Router} from 'react-router-dom';
 
 export default class ReduxRouter extends React.Component {
+	constructor() {
+		super();
+		this.handleLocationChange = this.handleLocationChange.bind(this);
+	}
 	componentWillMount() {
 		const {history} = this.props;
 		this.handleLocationChange(history.location);
@@ -22,7 +26,7 @@ export default class ReduxRouter extends React.Component {
 	}
     
 	render() {
-		return <Router history={this.props.history} />;
+		return <Router {...this.props} />;
 	}
 }
 

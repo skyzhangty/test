@@ -1,16 +1,23 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 
 import StudyListPage from '../components/StudyListPage';
-import {getStudyList} from '../actions/study.list';
+import {getStudyList, sortStudyList} from '../actions/study.list';
+
+import {getQueryParamObject, getIsArchived, getSortBy} from '../selectors/study.list';
 
 const mapStateToProps = (state) => ({
-	studyList: state.studyList
+	studyList: state.studyList,
+	queryParamObject: getQueryParamObject(state),
+	isArchived: getIsArchived(state),
+	sortBy: getSortBy(state)
 });
 
-const mapDispatchToProps = {
-	getStudyList
-};
+const mapDispatchToProps = (dispatch) => ({
+	getStudyList: (queryParamObject) => dispatch(getStudyList(queryParamObject)),
+	sortStudyList: (queryParamObject) => {
+		// history.push({pathname: ''search: 'sort-by'});
+		dispatch(sortStudyList(queryParamObject));
+	}
+});
 
-const connectedStudyListPage = connect(mapStateToProps, mapDispatchToProps)(StudyListPage);
-export default withRouter(connectedStudyListPage);
+export default connect(mapStateToProps, mapDispatchToProps)(StudyListPage);

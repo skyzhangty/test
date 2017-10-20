@@ -10,15 +10,15 @@ import StudyListControls from './StudyListControls';
 class StudyListPage extends React.PureComponent {
 	
 	componentDidMount() {
-		const queryParams = this.props.location.search;
-		this.props.getStudyList(queryParams);
+		this.props.getStudyList(this.props.queryParamObject);
 	}
 
 	render() {
+		const {isArchived, sortBy, sortStudyList, studyList} = this.props;
 		return (
 			<div className="grid-sm-1 grid-md-9-12 grid-centered">
-				<StudyListControls canAddStudy sortBy={'new-volunteers'}/>
-				<StudyList studyList={this.props.studyList} />
+				<StudyListControls isArchived={isArchived} sortBy={sortBy} sortStudyList={sortStudyList}/>
+				<StudyList studyList={studyList} />
 			</div>
 		);
 	}
@@ -26,10 +26,11 @@ class StudyListPage extends React.PureComponent {
 
 StudyListPage.propTypes = {
 	getStudyList: PropTypes.func.isRequired,
+	sortStudyList: PropTypes.func.isRequired,
 	studyList: PropTypes.arrayOf(StudyType.isRequired).isRequired,
-	location: PropTypes.shape({
-		search: PropTypes.string.isRequired
-	}).isRequired
+	queryParamObject: PropTypes.shape(PropTypes.object.isRequired).isRequired,
+	sortBy: PropTypes.string.isRequired,
+	isArchived: PropTypes.bool.isRequired
 };
 
 export default StudyListPage;

@@ -23,6 +23,7 @@ export default class ReduxRouter extends React.Component {
     
 	handleLocationChange(location) {
 		this.props.handleLocationChange(location);
+		this.props.loadInitialDataForPage(location);
 	}
     
 	render() {
@@ -34,5 +35,6 @@ ReduxRouter.propTypes = {
 	history: PropTypes.shape({
 		location: PropTypes.shape().isRequired
 	}).isRequired,
-	handleLocationChange: PropTypes.func.isRequired
+	handleLocationChange: PropTypes.func.isRequired,
+	loadInitialDataForPage: PropTypes.func.isRequired
 };

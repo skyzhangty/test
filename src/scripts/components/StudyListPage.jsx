@@ -9,9 +9,9 @@ import StudyListControls from './StudyListControls';
 
 class StudyListPage extends React.PureComponent {
 	
-	componentDidMount() {
-		this.props.getStudyList(this.props.queryParamObject);
-	}
+	// componentDidMount() {
+	// 	this.props.getStudyList(this.props.queryParamObject);
+	// }
 
 	render() {
 		const {isArchived, sortBy, sortStudyList, studyList} = this.props;
@@ -25,10 +25,10 @@ class StudyListPage extends React.PureComponent {
 }
 
 StudyListPage.propTypes = {
-	getStudyList: PropTypes.func.isRequired,
+	// getStudyList: PropTypes.func.isRequired,
 	sortStudyList: PropTypes.func.isRequired,
 	studyList: PropTypes.arrayOf(StudyType.isRequired).isRequired,
-	queryParamObject: PropTypes.shape(PropTypes.object.isRequired).isRequired,
+	// queryParamObject: PropTypes.shape(PropTypes.object.isRequired).isRequired,
 	sortBy: PropTypes.string.isRequired,
 	isArchived: PropTypes.bool.isRequired
 };

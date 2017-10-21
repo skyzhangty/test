@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import history from '../shared/history';
 
 class StudyListControls extends React.Component {
 	constructor() {
@@ -9,9 +8,8 @@ class StudyListControls extends React.Component {
 	}
 
 	sortStudyList(event) {
-		history.push({search: `sort-by=${event.target.value}`});
 		const queryParamsObject = {
-			'sort-by': this.props.sortBy,
+			'sort-by': event.target.value,
 			'is-archived': this.props.isArchived
 		};
 		this.props.sortStudyList(queryParamsObject);
@@ -26,8 +24,8 @@ class StudyListControls extends React.Component {
 					Sort by
 				</label>
 				<select id="selectSortStudiesBy" value={sortBy} onChange={this.sortStudyList}>
+					<option value="new-participants">New Participants</option>
 					<option value="new-messages">New Messages</option>
-					<option value="new-volunteers">New Participants</option>
 					<option value="posting-status">Posting Status</option>
 					<option value="title">Title</option>
 				</select>
